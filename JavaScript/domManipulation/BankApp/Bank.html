@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <input type="text" name="username" placeholder="User name" />
+    <br />
+    <br />
+    <input type="number" name="Ac number" placeholder="AC Number" />
+    <br />
+    <br />
+    <input type="number" placeholder="Enter Amount" id="enter-amount" />
+    <br />
+    <br>
+    <button onclick="deposit()">Deposit</button>
+    <button onclick="withdraw()">Withdraw</button>
+    <br />
+    <br />
+    <input
+      type="number"
+      name="available-balance"
+      placeholder="Available Balance"
+      value="0"
+      id="display"
+    />
+    <h1 id="balance-h1"></h1>
+    <script src="./Bank.js"></script>
+  </body>
+</html>
