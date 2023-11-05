@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- prevent default behavior of the form  -->
+    <form name="myForm" onsubmit="event.preventDefault()">
+      <input type="submit" value="do-something" onClick="addInnerHTML()" />
+      <button onClick="addInnerHTML()"> do-something-2</button>
+      <div id="myLocation"></div>
+    </form>
+
+    <script>
+      function addInnerHTML() {
+        const data = "<h1> Helo world </h1> <br/> <h2> 2nd heading </h2>";
+        var myLocation = document.getElementById("myLocation");
+        myLocation.innerHTML = data;
+      }
+    </script>
+  </body>
+</html>
