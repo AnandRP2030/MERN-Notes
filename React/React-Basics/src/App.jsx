@@ -9,7 +9,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<h1> Home Page </h1>} />
-          {/* <Route path="/pure-components" element={<h1> Home Page </h1>} /> */}
           <Route path="/async" element={<AsyncAwait />} />
         </Routes>
       </BrowserRouter>
