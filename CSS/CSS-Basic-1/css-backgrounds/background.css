@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Background Color */
+#bg-color {
+  background-color: #ffcccb;
+  height: auto;
+  text-align: center;
+  line-height: 100px;
+}
+
+/* Background Image */
+#bg-image {
+  background-image: url("https://picsum.photos/200");
+  background-repeat: no-repeat;
+  height: 300px;
+  background-position: center;
+  background-color: #cccccc;
+  background-size: contain;
+  background-size: cover;
+  background-size: auto;
+}
+#bg-image-2 {
+  background-image: url("https://picsum.photos/200");
+  background-repeat: repeat-x;
+  height: 300px;
+  background-color: #efef81;
+}
+
+#bg-image-3 {
+  background-image: url("https://picsum.photos/200");
+  background-repeat: repeat-y;
+  height: 500px;
+  background-color: #81ef81;
+}
+
+/* postion right left bottom top center */
+#bg-image-4 {
+  background-image: url("https://picsum.photos/200");
+  background-repeat: no-repeat;
+  height: 300px;
+  background-position: right;
+  background-color: #efef81;
+}
+
+#bg-image-5 {
+  background-image: url("https://picsum.photos/200");
+  background-repeat: repeat;
+  height: 300px;
+  background-position: right;
+  background-attachment: scroll;
+  background-color: #efef81;
+}
+#bg-image-6 {
+  background-image: url("https://picsum.photos/200");
+  background-repeat: repeat;
+  height: 300px;
+  background-position: right;
+  background-attachment: fixed;
+  background-color: #efef81;
+}
+
+.black-space {
+  height: 500px;
+  background-color: antiquewhite;
+}
