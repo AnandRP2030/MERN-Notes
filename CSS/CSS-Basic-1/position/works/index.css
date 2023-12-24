@@ -1,0 +1,29 @@
+.parent {
+  height: 500px;
+  background-color: blue;
+}
+
+.parent-2 {
+  background-color: aqua;
+}
+
+.child-1 {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+.child-2 {
+  height: 100px;
+  width: 100px;
+  background-color: green;
+}
+.child-3 {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+}
+.child-4 {
+  height: 100px;
+  width: 100px;
+  background-color: darkgoldenrod;
+}

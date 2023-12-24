@@ -1,0 +1,13 @@
+.child-1 {
+  position: absolute;
+}
+
+.child-4 {
+  position: relative;
+}
+
+.child-3 {
+  position: fixed;
+}
+
+/* top, left, bottom, and right  */

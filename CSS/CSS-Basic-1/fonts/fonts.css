@@ -1,0 +1,88 @@
+p {
+  font-style: italic;
+}
+
+h1 {
+  font-style: oblique 15deg;
+}
+
+span {
+  font-style: inherit;
+}
+
+.italic {
+  font-style: italic;
+}
+.parent {
+  font-style: bold;
+}
+
+.inherit-font {
+  font-style: inherit;
+}
+
+.text-dec-overline {
+  text-decoration: overline;
+  text-transform: uppercase;
+}
+
+.text-dec-line-through {
+  text-decoration: line-through;
+  text-transform: lowercase;
+}
+
+.text-dec-underline {
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+
+.captilize {
+  text-transform: capitalize;
+  color: green;
+}
+
+.letter-spacing {
+  letter-spacing: 20px;
+}
+
+.word-spacing {
+  word-spacing: 20px;
+  text-indent: 20px;
+}
+
+/* anchor tag different states for text */
+.my-link:link {
+  color: red;
+}
+.my-link:visited {
+  color: green;
+}
+.my-link:hover {
+  color: blue;
+}
+.my-link:active {
+  color: yellow;
+}
+
+.my-box {
+  height: 200px;
+  width: 200px;
+  background-color: yellow;
+  margin: 10px 20px 10px 30px;
+  padding: 20px;
+  border: 2px dotted black;
+  border: 2px solid black;
+  border: 2px double black;
+  border: 2px groove black;
+  border: 2px dashed black;
+  border: 2px ridge black;
+  border: 2px inset black;
+  border: 2px outset black;
+}

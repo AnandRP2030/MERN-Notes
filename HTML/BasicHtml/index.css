@@ -1,0 +1,24 @@
+.my-img {
+  width: 100px;
+  height: 100px;
+}
+
+table {
+  background-color: red;
+}
+
+thead {
+  background-color: green;
+}
+
+h3 {
+  color: red;
+}
+
+.my-head {
+  color: green;
+}
+
+#my-id {
+  color: blue;
+}

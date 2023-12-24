@@ -1,6 +1,7 @@
 import { ADD_ITEM, REMOVE_ITEM } from "../ActionTypes/actionTypes";
 const initialState = {
   numOfItems: 0,
+  username: "ABCD",
 };
 
 export const cartReducer = (state = initialState, action) => {

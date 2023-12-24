@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list-styles</title>
+    <link rel="stylesheet" href="list-styles.css" />
+    <link rel="icon" href="https://picsum.photos/200" />
+    <style>
+      /* adjust width  */
+      .img-2 {
+        list-style-type: none; /* Remove default list style */
+        padding: 0; /* Remove default padding */
+      }
+
+      .img-2 li {
+        margin-bottom: 10px; /* Add some spacing between list items */
+      }
+
+      .img-2 li::before {
+        content: ""; /* Ensure content is empty for pseudo-element */
+        display: inline-block;
+        width: 30px; /* Adjust the width of the images as needed */
+        height: 30px; /* Adjust the height of the images as needed */
+        background: url("https://picsum.photos/200") no-repeat; /* Specify the image URL */
+        background-size: cover; /* Ensure the image covers the container */
+        margin-right: 10px; /* Add space between the image and the text */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Normal Unordered list</h1>
+    <ul class="normal">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <h1>list-style-type: decimal</h1>
+    <ul class="decimal">
+      <li>Kochi</li>
+      <li>Chennai</li>
+      <li>Delhi</li>
+    </ul>
+    <h1>list-style-type: decimal-leading-zero</h1>
+    <ul class="decimal-leading-zero">
+      <li>Kochi</li>
+      <li>Chennai</li>
+      <li>Delhi</li>
+    </ul>
+
+    <h1>list-style-type: lower-alpha</h1>
+    <ul class="lower-alpha">
+      <li>Alpha</li>
+      <li>Beta</li>
+      <li>Gamma</li>
+    </ul>
+
+    <h1>list-style-type: upper-alpha</h1>
+    <ul class="upper-alpha">
+      <li>Alpha</li>
+      <li>Beta</li>
+      <li>Gamma</li>
+    </ul>
+
+    <h1>list-style-type: lower-roman</h1>
+    <ul class="lower-roman">
+      <li>Roman I</li>
+      <li>Roman II</li>
+      <li>Roman III</li>
+    </ul>
+
+    <h1>list-style-type: upper-roman</h1>
+    <ul class="upper-roman">
+      <li>Roman I</li>
+      <li>Roman II</li>
+      <li>Roman III</li>
+    </ul>
+
+    <h1>list-style-type: lower-greek</h1>
+    <ul class="lower-greek">
+      <li>Alpha</li>
+      <li>Beta</li>
+      <li>Gamma</li>
+    </ul>
+
+    <h1>list-style-type: lower-latin</h1>
+    <ul class="lower-latin">
+      <li>Latin A</li>
+      <li>Latin B</li>
+      <li>Latin C</li>
+    </ul>
+
+    <h1>list-style-type: upper-latin</h1>
+    <ul class="upper-latin">
+      <li>Latin A</li>
+      <li>Latin B</li>
+      <li>Latin C</li>
+    </ul>
+
+    <h1>list-style-type: circle</h1>
+    <ul class="circle">
+      <li>circle A</li>
+      <li>circle B</li>
+      <li>circle C</li>
+    </ul>
+    <h1>list-style-type: img</h1>
+    <ul class="img">
+      <li>image A</li>
+    </ul>
+    <h1>list-style-type: img adjust width</h1>
+    <ul class="img-2">
+      <li>image B</li>
+      <li>image B</li>
+    </ul>
+  </body>
+</html>

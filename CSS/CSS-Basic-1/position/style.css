@@ -1,0 +1,36 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.blank-space {
+  height: 100px;
+}
+.parent {
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
+}
+h2 {
+  margin: 0;
+}
+.child-0 {
+  height: 50px;
+  background-color: tan;
+}
+
+.child-1 {
+  height: 50px;
+  background-color: rgb(123, 255, 0);
+}
+.child-2 {
+  height: 50px;
+  background-color: rgb(155, 44, 196);
+}
+.child-3 {
+  height: 50px;
+  background-color: rgb(0, 183, 255);
+}
+.child-4 {
+  height: 50px;
+  background-color: rgb(234, 255, 0);
+}
