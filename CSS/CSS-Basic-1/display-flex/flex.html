@@ -5,22 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flex</title>
     <link rel="stylesheet" href="flex.css" />
-    <link rel="stylesheet" href="flex-styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="container">
+    <h1>Display: flex</h1>
+    <div class="box container">
       <div class="child-1">1</div>
       <div class="child-2">2</div>
       <div class="child-3">3</div>
       <div class="child-4">4</div>
       <div class="child-5">5</div>
     </div>
-    <div class="container-2">
+    <h1 class="main-heading">Property: justify-content</h1>
+    <h3>justify-content: flex-start</h3>
+    <div class="box container-0">
       <div class="child-1">1</div>
       <div class="child-2">2</div>
       <div class="child-3">3</div>
       <div class="child-4">4</div>
       <div class="child-5">5</div>
+    </div>
+    <h3>justify-content: flex-end</h3>
+    <div class="box container-1">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h3>justify-content: center</h3>
+    <div class="box container-2">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h3>justify-content: space-between</h3>
+    <div class="box container-3">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h3>justify-content: space-around</h3>
+    <div class="box container-4">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h3>justify-content: space-evently</h3>
+    <p>
+      justify-content: space-evenly to a flex container, it creating equal space
+      around each item.
+    </p>
+    <div class="box container-5">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+
+    <h1 class="main-heading">Property: order</h1>
+    <h3>order: 1</h3>
+    <p>
+      By default, flex items are laid out in the source order. However, the
+      order property controls the order in which they appear in the flex
+      container. default 0. Items with the same order revert to source order.
+    </p>
+    <div class="box container-6">
+      <div class="child-1 order-2">order 2</div>
+      <div class="child-2 order-99">order 99</div>
+      <div class="child-3 order-neg-1">order -1</div>
+      <div class="child-4 order-10">4</div>
+      <div class="child-5 order-10">5</div>
+    </div>
+    <h1 class="main-heading">Property: flex-direction</h1>
+    <h3>row || row-reverse || column || column-reverse</h3>
+
+    <div class="box container-7">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h1 class="main-heading">Property: flex-wrap</h1>
+    <h3>wrap || nowrap || wrap-reverse</h3>
+
+    <div class="box container-8">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h1 class="main-heading">Property: flex-flow</h1>
+    <p>
+      This is a shorthand for the flex-direction and flex-wrap properties, which
+      together define the flex container’s main and cross axes. The default
+      value is row nowrap.
+    </p>
+    <p>syntax (flex-flow: flex-direction flex-wrap;)</p>
+    <h3>row || row-reverse || column || column-reverse</h3>
+    <h3>wrap || nowrap || wrap-reverse</h3>
+
+    <div class="box container-9">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h1 class="main-heading">Property: align-items</h1>
+    <p>controls cross axis (vertical)</p>
+
+    <h3>
+      flex-start | flex-end | center | baseline (check with different height for
+      flex-container) | stretch (it work if not specify height for the
+      flex-items. its default)
+    </h3>
+
+    <div id="align-1" class="box container-10">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+    </div>
+    <h1 class="main-heading">Property: gap</h1>
+    <p>
+      The gap property explicitly controls the space between flex items. It
+      applies that spacing only between items not on the outer edges.
+    </p>
+
+    <h3>gap, row-gap, column-gap</h3>
+
+    <div class="box container-11">
+      <div class="child-1">1</div>
+      <div class="child-2">2</div>
+      <div class="child-3">3</div>
+      <div class="child-4">4</div>
+      <div class="child-5">5</div>
+      <div class="child-1">6</div>
+      <div class="child-2">7</div>
+      <div class="child-3">8</div>
+      <div class="child-4">9</div>
+      <div class="child-5">10</div>
     </div>
   </body>
 </html>
