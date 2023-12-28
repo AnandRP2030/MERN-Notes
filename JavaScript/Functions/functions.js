@@ -5,11 +5,6 @@ function sayHello() {
   document.write("<br/>");
 }
 sayHello();
-sayHello();
-sayHello();
-sayHello();
-sayHello();
-sayHello();
 // function with argument
 function printNumber(num) {
   document.write(num);
@@ -42,7 +37,7 @@ function sayWelcome(name) {
 
 // accessing local variable welcomeMsg outside of the function.
 // document.write(welcomeMsg); // get error
-sayWelcome(" Anand");
+sayWelcome("Anand");
 
 let todayTopic = "Javascript Functions";
 
