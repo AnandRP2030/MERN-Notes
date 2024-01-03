@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css" />
+    <link rel="stylesheet" href="gridStyle.css" />
+  </head>
+  <body>
+    <h1>Grid System</h1>
+    <h2>
+      CSS Grid Layout is a powerful and flexible system for creating
+      two-dimensional layouts on web pages.
+    </h2>
+    <h3>Grid Template columns grid-template-columns: repeat(6, 1fr);</h3>
+    <div class="grid-container-1 wrapper">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h2>Grid Template columns grid-template-columns: 1fr 2fr 4fr;</h2>
+    <div class="grid-container-2 wrapper">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <h2>Grid Template columns grid-template-columns: 1fr 60px;</h2>
+    <h3>Mixed Units fixed(px) and fractional</h3>
+    <p>
+      *Here's how space is divided when you mix units like 1fr and 60px in
+      grid-template-columns: ** Fixed Units Get Priority: The browser first
+      allocates space for any fixed units, like the 60px column in this example.
+      It takes up exactly 60 pixels of width. Fractional Units Claim Remaining
+      Space: The fr units then divide the remaining available space
+      proportionally. In this case, the 1fr column will occupy whatever space is
+      left after the 60px column is accounted for.
+    </p>
+    <div class="grid-container-3 wrapper">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <h2>Grid Template grid-template-rows: ;</h2>
+    <h2>Grid Template grid-template-columns: ;</h2>
+    <h3>Additonal properties:</h3>
+    <h3>
+      justify-content: center | start | end | space-between | space-around |
+      space-evenly
+    </h3>
+    <div class="grid-container-4">
+      <div class="item item-1">1</div>
+      <div class="item item-2">2</div>
+      <div class="item item-3">3</div>
+      <div class="item item-4">4</div>
+      <div class="item item-5">5</div>
+      <div class="item item-6">6</div>
+      <div class="item item-7">7</div>
+      <div class="item item-8">8</div>
+      <div class="item item-9">9</div>
+      <div class="item item-10">10</div>
+      <div class="item item-11">11</div>
+      <div class="item item-12">12</div>
+    </div>
+    <h2>Give specify space for an item</h2>
+    <p>
+      .item-1 { grid-row-start: 1; grid-row-end: 3; grid-column-start: 1;
+      grid-column-end: 3; }
+    </p>
+    <div class="grid-container-4">
+      <div class="item item-1">1</div>
+      <div class="item item-2">2</div>
+      <div class="item item-3">3</div>
+      <div class="item item-4">4</div>
+      <div class="item item-5">5</div>
+      <div class="item item-6">6</div>
+    </div>
+  </body>
+</html>

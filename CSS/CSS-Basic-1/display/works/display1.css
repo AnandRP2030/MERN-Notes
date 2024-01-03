@@ -1,0 +1,18 @@
+.box {
+    background-color: rgb(161, 141, 141);
+    color: rgb(191, 27, 27);
+}
+.heading {
+    display: inline;
+}
+.para {
+    display: inline;
+}
+
+.inline-div-box {
+    display: inline;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(181, 181, 76);
+    color: rgb(0, 0, 0);
+}

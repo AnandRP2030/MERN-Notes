@@ -14,11 +14,11 @@ span {
   font-style: italic;
 }
 .parent {
-  font-style: bold;
+  color: red;
 }
 
 .inherit-font {
-  font-style: inherit;
+  color: inherit;
 }
 
 .text-dec-overline {
@@ -57,16 +57,23 @@ span {
   text-indent: 20px;
 }
 
+.text-indent {
+  /* // create indentation in text */
+  text-indent: 50px;
+}
+
 /* anchor tag different states for text */
 .my-link:link {
   color: red;
 }
+/* if already visited  */
 .my-link:visited {
   color: green;
 }
 .my-link:hover {
   color: blue;
 }
+/* if clicked */
 .my-link:active {
   color: yellow;
 }
@@ -85,4 +92,13 @@ span {
   border: 2px ridge black;
   border: 2px inset black;
   border: 2px outset black;
+}
+
+.font-style-1 {
+}
+
+.font-style-1:hover {
+  font-size: 40px;
+  color: red;
+  text-shadow: 2px 2px 5px black;
 }

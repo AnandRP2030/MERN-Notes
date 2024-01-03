@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="display.css" />
+  </head>
+  <body>
+    <h1>CSS Display</h1>
+    <h4>
+      The CSS display property is used to define the rendering behavior of an
+      element in terms of its box type and layout. It determines how an element
+      is displayed on the web page. The display property can take various
+      values, each affecting the element's layout and interactions differently.
+    </h4>
+
+    <h2>1. display: block</h2>
+
+    <h4>
+      block: The element generates a block-level box, which means it starts on a
+      new line and stretches the full width of its containing element. Example:
+      div, p, h1,
+    </h4>
+
+    <div class="common-div div-box">Div Box 0 ;display: block;</div>
+
+    <span> Above div box width 50% only, but its take the entire line</span>
+    <h2>2. Display inline</h2>
+    <div class="common-div div-box-1">Div Box - 1 ; display: inline;</div>
+
+    <span>
+      Display inline : The element generates an inline-level box, which means it
+      does not start on a new line and only takes up as much width as
+      necessary.(height & width not affect). tags default inline display
+      Examples are: span, a, strong
+    </span>
+
+    <h2>3. Display inline-block</h2>
+    <div class="common-div div-box-2">Div Box - 2 ; display: inline-block;</div>
+    <span
+      >The element generates an inline-level box, but it behaves as a
+      block-level element regarding its layout. It doesn't start on a new line
+      and can have width and height properties.
+    </span>
+    <div class="container"></div>
+    <h2>4. Display none</h2>
+    <div class="common-div div-box-3">Div Box - 3; display: none;</div>
+    <span
+      >The element is not displayed at all, making it effectively invisible and
+      taking up no space in the layout. This is often used for hiding and
+      showing elements dynamically using JavaScript.
+    </span>
+    <div class="container"></div>
+    <h2>5. Display flex</h2>
+    <div class="common-div div-box-4">Div Box - 4; display: flex;</div>
+    <span
+      >The element becomes a flex container, and its children become flex items.
+      This allows for flexible layouts with the ability to easily control the
+      arrangement of items along the main and cross axes.
+    </span>
+    <h2>6. Display grid</h2>
+    <div class="container"></div>
+    <div class="common-div div-box-5">Div Box - 5; display: grid;</div>
+    <span
+      >The element becomes a grid container, and its children become grid items.
+      This allows for a two-dimensional layout system, providing both rows and
+      columns.
+    </span>
+  </body>
+</html>

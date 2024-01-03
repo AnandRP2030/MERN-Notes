@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+.common-div {
+  border: 2px solid red;
+  height: 50px;
+  background-color: #eee;
+  color: black;
+}
+
+.div-box {
+  width: 50%;
+  display: block;
+}
+
+.div-box-1 {
+  display: inline;
+}
+
+.div-box-2 {
+  display: inline-block;
+}
+
+.div-box-3 {
+    display: none;
+}
+
+.div-box-4 {
+    display: flex;
+}
+.div-box-5 {
+    display: grid;
+}

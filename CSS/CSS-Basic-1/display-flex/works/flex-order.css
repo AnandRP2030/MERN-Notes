@@ -1,0 +1,21 @@
+.flex-container {
+    height: 300px;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+}
+
+.flex-order-items {
+    height: 50px;
+    width: 50px;
+    color: red;
+    border: 2px solid black;
+    font-size: 25px;
+
+}
+.order-neg {
+    order: -1;
+}
+.pos-val {
+    order: 5;
+}
