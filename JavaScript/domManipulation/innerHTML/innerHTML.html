@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inner html</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
+    <button onClick="changeBodyBackground()"> Change Body BG color</button>
     <h1> Empty Document</h1>
     <div id="root">
 
@@ -18,12 +20,41 @@
     <button onClick="fillContent()">
         fill content
     </button>
+
+
+    <h1 id="name-tag">Anand</h1>
+
+    <button onClick="showName()">
+        Show Name
+    </button>
+
+    <button onClick="changeColor()">
+        change Color
+    </button>
+
+    <img src="" alt="">
     <button onClick="changeColor()">
         Change color
     </button>
     <button onclick="changeBgColor()">
         Change bg color
     </button>
+
+    <div id="box">
+
+    </div>
+
+    <button onClick="changeBgColor()">
+        Change Bg Color
+    </button>
+    <button onClick="addImageToBox()">
+        Add Image to box
+    </button>
+    <button onclick="removeImgFromBox()">
+        Remove Image
+    </button>
     <script src="./innerHTML.js"></script>
 </body>
 </html>
+
+
