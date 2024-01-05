@@ -13,20 +13,6 @@ body {
   background-color: red;
 }
 
-/* media queries  */
-/* max-width works if screen size under 600px value  */
-@media only screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
-  .box {
-    background-color: blue;
-  }
-  h5 {
-    font-size: 20px;
-    color: red;
-  }
-}
 
 /* max-width works if screen size under 900px value  */
 @media only screen and (max-width: 900px) {
@@ -39,6 +25,22 @@ body {
   h1 {
     font-size: 25px;
     color: green;
+  }
+}
+
+
+/* media queries  */
+/* max-width works if screen size under 600px value  */
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .box {
+    background-color: blue;
+  }
+  h5 {
+    font-size: 20px;
+    color: red;
   }
 }
 

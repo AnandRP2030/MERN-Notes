@@ -14,3 +14,19 @@ Breakpoints in responsive design are specific points or ranges in the CSS where 
    - Target devices: Desktops and laptops
 
 These are general guidelines, and you can adjust them based on your specific design and the content you're working with. The breakpoints help ensure that your website looks good and is usable across a variety of devices with different screen sizes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
