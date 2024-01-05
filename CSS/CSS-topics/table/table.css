@@ -18,8 +18,8 @@ td {
 thead:hover {
   background-color: green;
   font-size: 30px;
-  color: red;
-  cursor: pointer;
+  color: rgb(208, 99, 99);
+  cursor: crosshair;
   font-weight: 800;
 }
 thead,
@@ -30,4 +30,10 @@ tfoot {
 
 td.bg-red {
   background-color: red;
+  height: 150px;
+  vertical-align: bottom;
+}
+
+.heading-table {
+
 }
