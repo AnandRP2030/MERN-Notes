@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+  color: white;
+}
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
+
+/* media queries  */
+/* max-width works if screen size under 600px value  */
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .box {
+    background-color: blue;
+  }
+  h5 {
+    font-size: 20px;
+    color: red;
+  }
+}
+
+/* max-width works if screen size under 900px value  */
+@media only screen and (max-width: 900px) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .box {
+    background-color: yellow;
+  }
+  h1 {
+    font-size: 25px;
+    color: green;
+  }
+}
+
+/* Styles for screens between 601 and 900 pixels */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  body {
+    background-color: blueviolet;
+  }
+}
+
+/* Styles for screens larger than 900 pixels */
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: green;
+  }
+}

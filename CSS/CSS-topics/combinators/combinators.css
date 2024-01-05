@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+  color: white;
+}
+/* 1.  Descendant Selector (Space): */
+.box h1 {
+  color: red;
+}
+
+/* 2 child selector  */
+.box-2 > h1 {
+  color: green;
+}
+
+/* 3 General Sibling Selector  */
+/* Selects all <p> elements that are siblings of <h3> */
+h3 ~ p {
+  color: orange;
+}
+
+/* Adjacent(തൊട്ടടുത്തുള്ള) Sibling Selector (+):
+
+The adjacent sibling selector selects an element that is immediately preceded by a specified element. */
+
+h6 + p {
+  color: aqua;
+}
