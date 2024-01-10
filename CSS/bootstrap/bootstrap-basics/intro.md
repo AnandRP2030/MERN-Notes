@@ -1,0 +1,1 @@
+1. Bootstrap is open source (meaning all the source code is available for public)

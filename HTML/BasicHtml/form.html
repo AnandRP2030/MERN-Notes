@@ -7,16 +7,16 @@
   </head>
   <body>
     <h1>Form Tag</h1>
-    <form action="http://www.example.com" method="get">
-      <label for=""> Username</label>
+    <form method="get">
+      <label> Username</label>
       <input type="text" placeholder="Enter your name" />
       <br />
       <label for=""> Name</label>
-      <input type="number" placeholder="Enter your name" />
+      <input type="number" placeholder="phone Number" />
       <br />
       <input type="email" placeholder="email" />
       <br />
-      <input type="submit" value="Signup" />
+      <input type="submit" value="Login" />
 
       <br />
       <br />
@@ -33,9 +33,12 @@
       <br />
 
       <h1>Radio Buttons</h1>
-      <input type="radio" name="gender" value="male" /> Male
-      <input type="radio" name="gender" value="female" /> Female
-      <input type="radio" name="gender" value="other" /> Other
+      <label for="">Male</label>
+      <input type="radio" name="gender" value="male" />
+      <label for="">Female</label>
+      <input type="radio" name="gender" value="female" />
+      <label for="">Other</label>
+      <input type="radio" name="gender" value="other" />
       <br />
 
       <h1>Checkboxes</h1>
@@ -79,8 +82,6 @@
       <input type="hidden" name="secret_value" value="hidden_data" />
       <br />
 
-      <h1>Image Input</h1>
-      <input type="image" src="https://picsum.photos/200/300" alt="Submit" />
       <br />
 
       <h1>Month Input</h1>
@@ -104,7 +105,13 @@
       <br />
 
       <h1>Telephone Input</h1>
-      <input type="tel" name="phone_number" />
+      <h5>
+        type="tel" is used to create a text input field specifically designed
+        for entering telephone numbers. This input type is helpful because it
+        can trigger mobile devices to display a numeric keyboard, making it
+        easier for users to input phone numbers.
+      </h5>
+      <input type="tel" name="phone_number" required />
       <br />
 
       <h1>Time Input</h1>
@@ -121,8 +128,11 @@
       <select name="cars" id="">
         <option value="tesla">Tesla</option>
         <option value="tata">Tata</option>
-        <option value="audi">Audi</option>
+        <option value="zerer">Audi</option>
       </select>
+
+      <h1>Image Input => use for submit</h1>
+      <input type="image" src="https://picsum.photos/200/300" alt="Submit" />
       <br />
     </form>
   </body>
