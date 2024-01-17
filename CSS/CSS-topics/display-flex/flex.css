@@ -70,3 +70,10 @@
   min-height: 300px;
   align-items: center;
 }
+
+.container-11 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  
+} 

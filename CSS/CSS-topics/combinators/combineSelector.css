@@ -1,4 +1,8 @@
-div> h3, p, span {
+div> h3, div> h2,  span {
+    color: red;
+}
+
+span {
     color: red;
 }
 

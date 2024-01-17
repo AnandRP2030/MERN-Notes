@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>combinators</title>
+
+    <!-- internal css  -->
+    <style>
+      /* 1. decendent selectors  */
+      /* .my-box h1 {
+        color: red;
+       }  */
+
+      /* 2. child selector  */
+      .my-box > h1 {
+        color: green;
+      }
+
+      /* adjacent sibling selectors  */
+      h2 + p {
+        color: red;
+      }
+
+      /* gernarl sibling selectors  */
+      h2 ~ p {
+        font-size: 5rem;
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-box">
+      <h1>content inside div</h1>
+      <h1>content inside div</h1>
+      <h1>content inside div</h1>
+      <h1>content inside div</h1>
+
+      <div>
+        <h1>content inside nested div</h1>
+        <div>
+          <h1>content 3 nested divs</h1>
+        </div>
+      </div>
+      <h2></h2>
+      <p>line 40 paragraph tag</p>
+      <p>paragraph tag</p>
+      <p>paragraph tag</p>
+    </div>
+
+    <div class="my-box">
+      <h1>content inside div</h1>
+    </div>
+
+    <h1>Content outside div</h1>
+
+    <div className="box-2">
+      <h2>h2 inside box-2</h2>
+      <p>P1 inise box-2</p>
+      <p>P2 inise box-2</p>
+      <p>P3 inise box-2</p>
+    </div>
+  </body>
+</html>

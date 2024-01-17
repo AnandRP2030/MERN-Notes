@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 90%;
+  margin: auto;
+  background-color: red;
+  min-height: 500px;
+}
+
+.container > div {
+  background-color: green;
+  height: 100px;
+  width: 100px;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+    body {
+        background-color: yellow;
+    }
+}
