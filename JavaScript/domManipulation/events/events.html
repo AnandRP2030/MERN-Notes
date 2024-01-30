@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events</title>
     <style>
-        #test-container {
-            height: 200px;
-            width: 200px;
-            border: 1px solid black;
-        }
+      #test-container {
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+      }
+      button {
+        background-color: yellow;
+        margin-top: 40px;
+        width: 200px;
+        height: 30px;
+      }
     </style>
-</head>
-<body onload="onload()">
-    <h1>HTML Events </h1>
-    <h3>onChange events</h3>
-    
-    <input type="text" placeholder="Enter your name" onChange="upperCase(event)">
-    
+  </head>
+  <body onload="onload()">
+    <h1>HTML Events</h1>
+
+    <h3>1. onchange</h3>
+    <p>onchange works when its losses its focus</p>
+    <input
+      type="text"
+      placeholder="Entoner your name"
+      onchange="upperCase(event)"
+    />
+
+    <h3>2. oninput</h3>
+    <p>oninput works when user type something</p>
+    <input
+      type="text"
+      placeholder="Enter your age"
+      oninput="changeSmallerCase(event)"
+    />
+
+    <h3>3. onmouseover</h3>
+    <h3>4. onmouseleave</h3>
     <h3>Mouse over events</h3>
-    <div id="test-container" onmouseover="changeBgColor()" onmouseleave="changeBgColorToYellow()">
-        <h2> Testing mouse events</h2>
+    <div
+      id="test-container"
+      onmouseover="changeBgColor()"
+      onmouseleave="changeBgColorToYellow()"
+    >
+      <h2>Testing mouse events</h2>
     </div>
 
+
+
     <script src="./events.js"></script>
-</body>
+  </body>
 </html>

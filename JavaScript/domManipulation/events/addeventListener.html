@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener()</title>
+    <style>
+      button {
+        background-color: yellow;
+        margin-top: 40px;
+        width: 200px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Add event listener</h1>
+    <h2>
+      The addEventListener() is an inbuilt function in JavaScript which takes
+      the event to listen for, and a second argument to be called whenever the
+      described event gets fired. Any number of event handlers can be added to a
+      single element without overwriting existing event handlers.
+    </h2>
+
+    <button id="btn">Add event listener checker</button>
+
+    <form>
+      <h2>onchange event show the user input details to console.</h2>
+      <input placeholder="Enter your name" type="text" name="name" />
+    </form>
+
+    <h2>This button works only once.</h2>
+    <p>
+      element.addEventListener(event, function, options);
+      <br />
+      Here, event is a string representing the type of event to listen for
+      (e.g., "click", "input", "change"), and function is the event handler
+      function to be executed when the event is detected.
+      <br />
+      The optional options parameter is an object that can be used to specify
+      additional options for the event handling.
+    </p>
+
+    <button id="hi-btn">say hi once</button>
+    <script src="./addeventListener.js"></script>
+  </body>
+</html>

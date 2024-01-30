@@ -6,27 +6,41 @@
     <title>Document</title>
   </head>
   <body>
+    <h2> 1. Get Element by id</h2>
     <h1 id="heading">My Heading</h1>
     <button onClick="changeContent()">Change Title</button>
-
+    
+    <h2> 2. Get Elements by class</h2>
     <div class="box">
       <h2>Box 1</h2>
     </div>
     <button onClick="updateBox1Content()">Update box 1 content</button>
+    
     <div class="box">
       <h2>Box 2</h2>
     </div>
 
+    <h2>3. Get elements by tag name</h2>
     <img src="https://picsum.photos/200" alt="pic" />
+    <button onclick="changeImg()">Change Image</button>
 
 
-    <form action="">
-        <select name="" id="">
+    <h2>4. Get elements by name attribute</h2>
+    <h2>5. onChange events </h2>
+    <h2>6. onSubmit event</h2>
+    <input type="text" placeholder="name" name="name">
+    <form action="" onsubmit="submitForm(event)">
+        <select name="" onChange="showGender(event)" id="">
             <option name="gender" value="male">Male</option>
             <option name="gender" value="female">Female</option>
             <option name="gender" value="other">Other</option>
         </select>
+          <input type="submit" value="submit form">
     </form>
+
+
+    <button onclick="docWrite()">Document write</button>
+    <button onclick="docWriteLn()">Document writeln</button>
     <script src="basic.js"></script>
   </body>
 </html>

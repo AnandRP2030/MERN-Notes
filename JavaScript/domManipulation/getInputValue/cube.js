@@ -4,8 +4,7 @@ function getCube() {
   alert(output);
 }
 
-function changeText(abcd) {
-     console.log("id", abcd);
-  abcd.innerHTML = "Ooops!";
+function changeText(elem) {
+  console.log("id", elem);
+  elem.innerHTML = "Ooops!";
 }
-
