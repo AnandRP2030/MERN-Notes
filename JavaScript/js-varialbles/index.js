@@ -1,40 +1,29 @@
-console.log("External file")
-
-
-// show alert message in our website
-// alert("Welcome to our website")
-
-// we use comments because we get clarity on the code
-
-
-// initialize (assigning value to a variable) a varialbe, 
-var num = 10;
-
-// redeclaring a variable
-num = 20;
-
-
-console.log("name =>", name); // vignesh
-console.log("place =>", place); // error
-
-// variables
-var name = "Vignesh"; // string
-let place = "Kollam" 
-
-// newly introduced in ES6
-const phnNum = 1234556; // number
-
-
-// const means constant
-// phnNum = 2343434; // it throws an error.
-
-// Javascriipt is a single threaded language (its read line by line)
+function printSomething () {
+    if (true) {
+        var myName = "xyz"; // functional scope
+    }
+    console.log("my name", myName);
+}
 
 
 
 
-// Case sensitive
-// These two variables are js treated differently
-var time = 2;
-var Time = 5;
-var TIME = 10;
+let myName = "abc";
+
+myName = "skdfjk";
+
+const something = "sdf";
+something = "dfkj";
+console.log("something",something)
+printSomething()
+
+// keywords 
+// var => functional scope 
+// let => block scope
+// const => block scope
+
+// variable or function name rules
+// 1. cannot start with number
+// 2. cannot start with special characters
+// 3. can start with letters
+// 4. don't user js keywords (break, if, loops, etc..)

@@ -21,7 +21,7 @@ Implicit and explicit type conversion (also known as type coercion) refer to the
      ```javascript
      var str = "123";
      var num = Number(str); // Explicitly converting the string to a number using the Number() function
-     console.log(num); // 123
+     console.log(num); // 123 // NaN
      ```
 
 In summary, implicit type conversion is automatic and performed by the language, while explicit type conversion requires the programmer to specify the conversion using appropriate functions or operators. It's important to be aware of these mechanisms, as they can affect the behavior of your code and help avoid unexpected errors or results.
