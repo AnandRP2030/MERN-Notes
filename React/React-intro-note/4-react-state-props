@@ -1,0 +1,12 @@
+1. **State:**
+
+   - **Definition:** State is like memory for a React component. It represents the current situation or condition of that component.
+   - **Usage:** Use state to store and manage dynamic data that can change during the component's lifecycle.
+   - **Example:** If you're building a counter component, the current count value would be stored in the state.
+
+2. **Props:**
+   - **Definition:** Props (short for properties) are how components receive information from their parent component or the outside world.
+   - **Usage:** Pass data from one component to another by using props. They are like parameters passed to a function.
+   - **Example:** If you have a "Person" component, you might pass the person's name, age, and other details as props.
+
+In simple terms, think of state as an internal memory for a component, holding information that can change, while props are a way for components to communicate, passing information from one to another.

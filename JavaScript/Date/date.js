@@ -10,6 +10,14 @@ console.log("get hours", currentDate.getHours());
 console.log("get var minutes", currentDate.getMinutes());
 console.log("get seconds", currentDate.getSeconds());
 
+
+
+
+
+
+
+
+
 // 2. Date(milliseconds) - specific point in time
 // const millisecondsSinceEpoch = 1609459200000; // January 1, 2021
 // const dateFromMilliseconds = new Date(millisecondsSinceEpoch);

@@ -1,0 +1,3 @@
+In React, DOM stands for the Document Object Model. Simply put, the DOM is a programming interface for web documents. It represents the structure of a web page as a tree-like structure of objects, where each object corresponds to a part of the document, such as elements and their attributes.
+
+In React, when you create components and update their state or props, React uses a virtual representation of the DOM (Virtual DOM) to figure out the most efficient way to update the actual DOM. This helps in optimizing performance by avoiding unnecessary updates and rendering only the parts of the page that have changed.

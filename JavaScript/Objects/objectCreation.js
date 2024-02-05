@@ -13,12 +13,13 @@ emp2.name = "Ravi Malik";
 emp2.salary = 50000;
 console.log(emp2.id + " " + emp2.name + " " + emp2.salary);
 
-// 3.
+// 3. constructor function
 function ObjectConstructor(id, name, salary) {
   this.id = id;
   this.name = name;
   this.salary = salary;
 }
-var objectname = new ObjectConstructor(103, "Vimal Jaiswal", 30000);
 
-console.log("object name", objectname);
+var objectname = new ObjectConstructor(103, "Vimal Jaiswal", 30000);
+console.log("obbj", objectname);
+console.log("object name", objectname.name);
