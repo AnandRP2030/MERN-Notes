@@ -26,8 +26,8 @@ fetchDataPromise
     console.error("Error:", error);
   });
 
-async function getData() {
-  const result = "some string";
-  return result;
-}
-console.log(getData());
+// async function getData() {
+//   const result = "some string";
+//   return result;
+// }
+// console.log(getData());

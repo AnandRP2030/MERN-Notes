@@ -1,8 +1,15 @@
+document.addEventListener("keydown", function (event) {
+  // Do something when the user presses a key on the keyboard
+
+  console.log(event.key);
+});
+
 let todosDisplay = document.getElementById("tasks");
 
 let todos = [];
 
 let form = document.querySelector("form");
+console.log("form", form);
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -20,6 +27,7 @@ function displayElement() {
   for (let i = 0; i < todos.length; i++) {
     // create elements using createElement() method
     const li = document.createElement("li");
+    console.log("li", li);
     const deleteBtn = `<button class='dlt-btn' onclick='deleteTodo(${i})'> Delete </button>`;
     const completeBtn = `<button class='com-btn' onclick='completeTodo(${i})'> Complete </button>`;
     li.innerHTML = `${todos[i]} ${deleteBtn} ${completeBtn}`;

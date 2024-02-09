@@ -1,8 +1,8 @@
-// console.log(this); // window object
-// function a() {
-//   console.log(this); // window object
-// }
-// a();
+console.log(this); // window object
+function a() {
+  console.log(this); // window object
+}
+a();
 
 let employee = {
   name: "Elon",

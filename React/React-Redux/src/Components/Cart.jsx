@@ -1,10 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, removeItem } from "../Redux/cartAction";
 import "./Cart.css";
+
 const Cart = () => {
   const state = useSelector((state) => state);
   console.log("state", state);
   const dispatch = useDispatch();
+  
   return (
     <div className="cart">
       <h2>Number of items in Cart: {state.numOfItems}</h2>
