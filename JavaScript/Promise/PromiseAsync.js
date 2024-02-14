@@ -1,22 +1,31 @@
-const apiLink = "https://jsonplaceholder.typicode.com/posts/1";
+const apiLink = "https://jsonplaceholder.typicode.com/posts";
 
-function getData() {
-  fetch(apiLink)
-    .then((res) => {
-      console.log("res", res);
-      return res.json();
-    })
-    .then((data) => {
-      console.log("data", data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+function sum() {
+  return 5 + 2;
 }
+let apiData = null;
+let ans = sum();
+// // get request
+// function getData() {
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+//  .then((res) => {
+//       console.log("res", res);
+//       return res.json();
+//     })
+//     .then((data) => {
+//       console.log("data", data);
+//       apiData = data;
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// }
 
+// asynchronous function.
 
+// async & await => try catch
 
-getData();
+// getData();
 
 async function fetchData() {
   try {
@@ -29,11 +38,12 @@ async function fetchData() {
   }
 }
 
-// function execute() {
-//   console.log("Execute function started");
-//   fetchData();
-//   // Rest of the code
-//   console.log("Execute function Ended");
-// }
 
-// execute();
+function execute() {
+  console.log("Execute function started");
+  fetchData();
+  // Rest of the code
+  console.log("Execute function Ended");
+}
+
+execute();
