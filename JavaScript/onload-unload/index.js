@@ -1,6 +1,7 @@
 function onPageLoad() {
   alert("page loaded");
 }
+alert("DKFKD")
 function onPageUnload() {
   alert("page unload");
 }

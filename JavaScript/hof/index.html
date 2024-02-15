@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="welcome"></h1>
+    <h1 id="timer"></h1>
+    <h1>Start Timer</h1>
+    <button onclick="stop()"> Stop </button>
+
+    <script>
+      const welcomeDiv = document.querySelector("#welcome");
+
+      const timer = document.querySelector("#timer");
+
+      let num = 0;
+      setTimeout(() => {
+        welcomeDiv.innerHTML = " Welcome Here..";
+      }, 2000);
+
+      const id = setInterval(() => {
+        num++;
+        timer.textContent = num;
+      }, 1000);
+
+      function stop () {
+        clearInterval(id);
+      }
+    </script>
+  </body>
+</html>
