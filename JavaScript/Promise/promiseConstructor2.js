@@ -12,6 +12,9 @@ function checkMail() {
   return promise;
 }
 
+let output = checkMail();
+
+
 checkMail()
   .then((mail) => {
     console.log(mail);

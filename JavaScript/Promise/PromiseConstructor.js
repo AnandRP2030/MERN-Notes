@@ -1,24 +1,29 @@
 const apiLink = "https://jsonplaceholder.typicode.com/posts/1";
-
-const fetchDataPromise = new Promise(async (resolve, reject) => {
-  try {
-    const response = await fetch(apiLink);
-    console.log("my respon", response);
-    if (!response.ok) {
-      // Check if the response status is not okay (e.g., 404 Not Found)
-      throw new Error(`HTTP error! Status: ${response.status}`);
+function getData () {
+  const fetchDataPromise = new Promise(async (resolve, reject) => {
+    try {
+      const response = await fetch(apiLink);
+      console.log("my respon", response);
+      if (response.status === 200) {
+        resolve(response);
+      }else {
+        reject("Error")
+      }
+  
+      const data = await response.json();
+      
+      resolve(data);
+      
     }
+  });
 
-    const data = await response.json();
-    console.log("data", data);
-    resolve(data);
-  } catch (error) {
-    reject(error);
-  }
-});
+  return fetchDataPromise;
+}
+
+
 
 // Using the Promise
-fetchDataPromise
+getData()
   .then((result) => {
     console.log("Success:", result);
   })

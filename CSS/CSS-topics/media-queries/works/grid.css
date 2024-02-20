@@ -15,19 +15,19 @@
 
 @media only screen and (max-width: 900px) {
   .container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 500px) {
-    .container {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 600px) {
-    body {
-        background-color: yellow;
-    }
+  body {
+    background-color: yellow;
+  }
 }

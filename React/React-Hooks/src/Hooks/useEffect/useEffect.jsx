@@ -3,6 +3,8 @@ const UseEffectHook = () => {
   const [count, setCount] = useState(2);
   const [newComp, setNewComp] = useState(false);
 
+
+
   useEffect(() => {
     console.log("Component mount");
   }, []);
@@ -16,7 +18,7 @@ const UseEffectHook = () => {
 
   return (
     <div>
-        <h1> Use Effect Hook</h1>
+      <h1> Use Effect Hook</h1>
       <h1> count : {count}</h1>
       <button onClick={inc}>Count: {count}</button>
       <br />
