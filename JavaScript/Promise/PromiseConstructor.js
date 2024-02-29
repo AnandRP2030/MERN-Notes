@@ -1,26 +1,19 @@
 const apiLink = "https://jsonplaceholder.typicode.com/posts/1";
-function getData () {
-  const fetchDataPromise = new Promise(async (resolve, reject) => {
+function getData() {
+  return new Promise(async (resolve, reject) => {
     try {
       const response = await fetch(apiLink);
-      console.log("my respon", response);
-      if (response.status === 200) {
-        resolve(response);
-      }else {
-        reject("Error")
-      }
-  
       const data = await response.json();
-      
-      resolve(data);
-      
+      if (response.status === 200) {
+        resolve(data);
+      }
+    } catch (error) {
+      reject(error);
     }
   });
-
-  return fetchDataPromise;
 }
 
-
+console.log(getData());
 
 // Using the Promise
 getData()
@@ -31,6 +24,12 @@ getData()
     console.error("Error:", error);
   });
 
+async function collectData() {
+  let data = await getData();
+  console.log("dataasync", data);
+}
+
+collectData();
 // async function getData() {
 //   const result = "some string";
 //   return result;

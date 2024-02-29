@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Promise</h1>
+    <script>
+      function collect() {
+        console.log("line 13");
+
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+          .then((res) => {
+            console.log("res", res);
+            return res.json();
+          })
+          .then((data) => {
+            console.log("my data", data);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+          .finally(() => {
+            console.log("finally");
+          });
+
+        console.log("line 29");
+      }
+    //   collect();
+
+      async function collectByAsync() {
+        console.log("line 34")
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        let data = await res.json();
+        console.log("line 37")
+        console.log("data", data);
+        console.log("line 38")
+      }
+
+      collectByAsync();
+
+    </script>
+  </body>
+</html>

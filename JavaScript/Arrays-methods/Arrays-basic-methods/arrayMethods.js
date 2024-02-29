@@ -1,6 +1,7 @@
 var companyNames = ["Apple", "samsung", "Google", "Microsoft", "reliance"];
 var ceos = ["tim", "mike", "james", "john"];
 
+
 // document.write(companyNames);
 console.log("my array", companyNames);
 
@@ -16,10 +17,11 @@ console.log("after push", companyNames);
 companyNames.pop();
 console.log("Array after pop", companyNames);
 
-console.log("3 th index values", companyNames[3]);
+
+console.log("3 th index values", companyNames[3]); // undefined
 
 //4 Use splice to remove the element at the specified index
-companyNames.splice(2, 2);
+companyNames.splice(2, 1);
 
 console.log("Companies after deleting", companyNames);
 
@@ -33,7 +35,7 @@ console.log("combined arrays", combinedArray);
 
 var studentsList = ["Abcd", "Abc", "Abc", "ghi", "jkl", "new tweet"];
 //6 arr.indexOf(item)
-const indexOfTheStudents = studentsList.indexOf("ghi");
+const indexOfTheStudents = studentsList.indexOf("ghihhjhj");
 console.log("index of students", indexOfTheStudents);
 
 //7 Reverse an array
@@ -42,6 +44,8 @@ console.log("reversed array", reversedArray);
 
 // 8. slice method
 const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+let newArr = animals.slice(2, 3);
+console.log("new arr", newArr);
 console.log("sliced array",animals.slice(2));
 console.log("sliced array",animals.slice(2, 4));
 console.log("sliced array2",animals.slice(0,-2));
@@ -49,13 +53,13 @@ console.log("sliced array2",animals.slice(0,-2));
 //9. months sorted
 const months = ['March', 'Jan', 'Feb', 'Dec'];
 months.sort();
-console.log(months);
+console.log("sorted arr",months);
 // Expected output: Array ["Dec", "Feb", "Jan", "March"]
 
 //10. sort numbs
 const array1 = [2, 30, 4, 21, 100000];
 array1.sort();
-console.log(array1);
+console.log("nums sorted",array1);
 // [1, 100000, 21, 30, 4];
 
 // 11. ascending order sort

@@ -4,13 +4,13 @@ var lengthOfString = myPlace.length;
 console.log("Length of the string:", lengthOfString);
 
 // get a specified char from a string .charAt() method
-const char = myPlace.charAt(myPlace.length -1);
+const char = myPlace.charAt(50);
 console.log("value", char);
 
 // combine multiple strings  .concat() method
 const firstName = "Elon";
 const lastName = "Musk";
-const fullName = firstName.concat(" ", lastName);
+const fullName = firstName.concat(" ", lastName, "5656 ",firstName);
 
 console.log("concatination", fullName);  // ElonMusk
 
@@ -33,13 +33,14 @@ const upperCasePlace = myPlace.toUpperCase();
 console.log("upper case", upperCasePlace);
 
 // slice a string
-const slicePlace = myPlace.slice(1, 5); // slice(start index, end index) => start index include , end index exclude
+// trivandrum
+const slicePlace = myPlace.slice(1, 4); // slice(start index, end index) => start index include , end index exclude
 console.log("slice", slicePlace);
 
 // trim method
 // The trim() method of String values removes whitespace from both ends 
 //of this string and returns a new string, without modifying the original string.
-const welcome = "  welcome to w India  ";
+const welcome = "welcome to India";
 console.log(welcome)
 const trimWel = welcome.trim();
 console.log(trimWel); // Welcome to india
@@ -47,7 +48,7 @@ console.log(trimWel); // Welcome to india
 
 // split method
 // It splits a string into substring array, then returns that newly created array.
-const splitted = welcome.split(" ");
+const splitted = welcome.split("");
 console.log("splitted ",splitted); // [ '', '', '', 'Welcome', 'to', 'India', '', '' ]
 
 
