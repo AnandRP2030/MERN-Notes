@@ -1,7 +1,16 @@
-var heading = document.getElementById("heading");
+function changeH1 () {
+  let h1 = document.getElementById("empty-h1");
+  console.log("h1", h1);
+  h1.innerHTML = "<img src='https://picsum.photos/200' alt='pic' />"; 
+}
+var heading = document.getElementById("heading"); // single element
 
 function changeContent() {
-  heading.innerText = "New Title";
+  heading.innerText = "<img src='https://picsum.photos/200' alt='pic' />";
+  heading.style.color = "red";
+  heading.style.backgroundColor = "yellow";
+  heading.style.fontSize = "50px";
+  heading.style.textAlign = "center";
 }
 
 var boxes = document.getElementsByClassName("box");
@@ -16,6 +25,10 @@ function changeImg() {
   console.log("images", images);
   images[0].src =
     "https://media.istockphoto.com/id/1152537185/photo/hacker-working-on-laptop-in-the-dark.webp?s=1024x1024&w=is&k=20&c=XfH6Pl4y4Pm1KHbWNXuxmdUfmWdxPIC7ZeUXjwiaEzY=";
+}
+function changeImg2 () {
+  let img24 = document.getElementById("myImg");
+  img24.src = "https://media.istockphoto.com/id/1152537185/photo/hacker-working-on-laptop-in-the-dark.webp?s=1024x1024&w=is&k=20&c=XfH6Pl4y4Pm1KHbWNXuxmdUfmWdxPIC7ZeUXjwiaEzY="
 }
 
 var genders = document.getElementsByName("gender");

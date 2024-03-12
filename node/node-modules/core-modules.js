@@ -21,7 +21,7 @@ function doWrite(textContent) {
   });
 }
 
-// doWrite("Add another me");
+// doWrite("its a new data");
 const dataToAppend = "New content to append to the file";
 
 function appendNewData(dataToAppend) {
@@ -36,7 +36,7 @@ function appendNewData(dataToAppend) {
 // appendNewData(dataToAppend);
 
 function delFile() {
-  fs.unlink("example.txt", (err) => {
+  fs.unlink("dummy.txt", (err) => {
     if (err) {
       console.error("Error deleting file:", err);
       return;

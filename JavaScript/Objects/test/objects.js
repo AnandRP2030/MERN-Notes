@@ -22,6 +22,9 @@ var products = [
   { name: "t-shirt", price: 500, size: "m", color: "black", discount: 400 },
 ];
 
+
+let valu = products[products.length - 1].discount; 
+
 // console.log("products", products);
 var firstItemName = products[0].name;
 // console.log("first item", firstItemName);

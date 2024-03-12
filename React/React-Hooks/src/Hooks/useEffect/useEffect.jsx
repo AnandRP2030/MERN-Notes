@@ -9,9 +9,12 @@ const UseEffectHook = () => {
     console.log("Component mount");
   }, []);
 
+
   useEffect(() => {
     console.log("inside 2nd useffect, current count", count);
   }, [count]);
+
+
   const inc = () => {
     setCount(count + 1);
   };

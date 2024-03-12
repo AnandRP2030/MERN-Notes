@@ -2,7 +2,10 @@
 // 1. object literals, 2. Using object instance, 3. using object constructor
 
 // 1. Object Literals
-var emp = { id: 102, name: "Shyam Kumar", salary: 40000 };
+var emp = { id: 102,
+   name: "Shyam Kumar",
+    salary: 40000
+ };
 console.log(emp.id, emp.name, emp.salary);
 
 // 2. Creating instance of a object
