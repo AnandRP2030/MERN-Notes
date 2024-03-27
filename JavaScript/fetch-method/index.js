@@ -7,8 +7,9 @@ function getData() {
       return response.json();
     })
     .then((data) => {
-        allData = data;    
-        displayData(allData)
+      allData = data;
+      console.log("data", data);
+      displayData(allData);
     });
 }
 // Asynchronous function (Network call, Database interaction)
@@ -18,6 +19,7 @@ function displayData(data) {
   let tableBody = document.querySelector("tbody");
 
   tableBody.innerHTML = "";
+
   data.forEach((element, index, arr) => {
     console.log("elem", element, "ind", index, "arr", arr);
 
@@ -40,16 +42,17 @@ function displayData(data) {
     website.innerText = element.website;
     let delBtn = document.createElement("button");
     delBtn.innerText = "Delete Item";
-    delBtn.addEventListener('click', () => {
-        allData.splice(index, 1);
-        displayData(arr)
-    })
+
+    delBtn.addEventListener("click", () => {
+      allData.splice(index, 1);
+      displayData(arr);
+    });
     row.append(id, name, email, phone, website, delBtn);
 
     tableBody.append(row);
   });
   console.log("data", data);
 }
-// slice 
-// splice 
-// [1, 2, 3, 4, 5].splice(2, 1);
+// // slice
+// // splice
+// // [1, 2, 3, 4, 5].splice(2, 1);

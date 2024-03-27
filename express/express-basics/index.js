@@ -51,7 +51,6 @@ app.post("/login", (req, res) => {
     return res.status(500).json({ message: "Server error", error });
   }
 });
-// email, password
 
 app.post("/signup", (req, res) => {
   try {
@@ -64,6 +63,24 @@ app.post("/signup", (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 });
+
+app.get("/user", (req, res) => {
+  try {
+    const { id } = req.query;
+    console.log("id", req.query);
+    const user = db.find((user) => user.id === parseInt(id));
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    return res.status(200).json({ message: "User found", data: user });
+  } catch (error) {
+    return res.status(500).json({ message: "Server error", error });
+  }
+});
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const connectDb = require("./db.js");
 const StudentModel = require("./user/user.model.js");
+var cors = require('cors')
+
+ 
+app.use(cors())
 
 app.use(express.json());
 app.get("/", (req, res) => {
@@ -10,12 +14,17 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/teacher/signup", async (req, res) => {
+app.post("/student/signup", async (req, res) => {
   console.log(req.body);
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
   const phoneNumber = req.body.phoneNumber;
+
+  const isUserAlreadyExist = await StudentModel.findOne({ email });
+  if (isUserAlreadyExist) {
+    return res.status(400).json({ message: "User already exists" });
+  }
 
   const studentData = await new StudentModel({
     name,
@@ -32,14 +41,9 @@ app.post("/teacher/signup", async (req, res) => {
   });
 });
 
-app.post("/student/signup", async (req, res) => {
-  res.json({
-    message: "Signup complted successfully",
-    data: req.body,
-  });
-});
 
-app.post("/teacher/login", async (req, res) => {
+
+app.post("/student/login", async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   console.log(email, password);
@@ -60,19 +64,7 @@ app.post("/teacher/login", async (req, res) => {
   });
 });
 
-app.post("/student/login", (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
 
-  if (email === "vignesh@gmail.com" && password === "12341234") {
-    res.json({
-      message: "login complted successfully",
-      data: req.body,
-    });
-  } else {
-    res.status(404).json({ message: "Login failed" });
-  }
-});
 
 connectDb().then(() => {
   app.listen(8000, () => {
