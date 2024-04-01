@@ -2,6 +2,7 @@ import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate();
+  
   function redirectLogin () {
     navigate('/login')
   }

@@ -7,7 +7,7 @@ const Products = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
-  function addToCartFn (product) {
+  function addToCartFn(product) {
     dispatch(addToCart(product));
   }
   function cartIncrement(product) {
@@ -28,7 +28,14 @@ const Products = () => {
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Title>{product.price}</Card.Title>
                 {cart.cartCount === 0 ? (
-                  <Button onClick={addToCartFn}> Add to cart</Button>
+                  <Button
+                    onClick={() => {
+                      addToCartFn(product);
+                    }}
+                  >
+                    {" "}
+                    Add to cart
+                  </Button>
                 ) : (
                   <div className="d-flex justify-content-between">
                     <Button

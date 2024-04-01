@@ -3,14 +3,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {addToCart} from '../redux/cart'
+import { addToCart } from "../redux/cart";
 // its a hook
 const MyNavbar = () => {
   const cart = useSelector((state) => state.cart);
   const wishlist = useSelector((state) => state.wishlist);
-  
-  console.log("current cart state", cart);
-  console.log("current wishlist state", wishlist);
+
   return (
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
