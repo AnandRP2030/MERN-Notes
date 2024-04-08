@@ -24,7 +24,7 @@
   justify-content: space-around;
 }
 .container-5 {
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
 }
 
@@ -47,23 +47,24 @@
 .container-7 {
   display: flex;
   flex-direction: row;
-  flex-direction: column;
   flex-direction: column-reverse;
   flex-direction: row-reverse;
+  flex-direction: column;
 }
-.container-8{
+.container-8 {
   display: flex;
-  flex-wrap: nowrap;
-  flex-wrap: wrap-reverse;
   flex-wrap: wrap;
+  /* flex-wrap: nowrap;
+  flex-wrap: wrap-reverse;
+  flex-wrap: wrap; */
 }
-.container-9{
+.container-9 {
   display: flex;
   flex-flow: row-reverse wrap;
 }
 
 .box > container-10 {
-} 
+}
 
 #align-1 {
   display: flex;
@@ -75,5 +76,4 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px 30px;
-  
-} 
+}
