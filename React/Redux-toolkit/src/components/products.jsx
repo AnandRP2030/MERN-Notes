@@ -2,20 +2,17 @@ import products from "../api/products.json";
 import { useDispatch, useSelector } from "react-redux";
 import { Card, Button } from "react-bootstrap";
 import { addToCart, increment, decrement } from "../redux/cart";
+import {CartButtons} from "./cartButtons";
 
 const Products = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+  console.log("cart", cart);
 
   function addToCartFn(product) {
     dispatch(addToCart(product));
   }
-  function cartIncrement(product) {
-    dispatch(increment());
-  }
-  function cartDecrement(product) {
-    dispatch(decrement());
-  }
+
   return (
     <div>
       <h1>Products</h1>
@@ -27,7 +24,6 @@ const Products = () => {
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Title>{product.price}</Card.Title>
-                {cart.cartCount === 0 ? (
                   <Button
                     onClick={() => {
                       addToCartFn(product);
@@ -36,27 +32,8 @@ const Products = () => {
                     {" "}
                     Add to cart
                   </Button>
-                ) : (
-                  <div className="d-flex justify-content-between">
-                    <Button
-                      variant="primary"
-                      onClick={() => {
-                        cartIncrement(product);
-                      }}
-                    >
-                      +{" "}
-                    </Button>
-                    <Button
-                      variant="secondary"
-                      onClick={() => {
-                        cartDecrement(product);
-                      }}
-                    >
-                      {" "}
-                      -
-                    </Button>
-                  </div>
-                )}
+                  <CartButtons product={product}/>
+                
               </Card.Body>
             </Card>
           );

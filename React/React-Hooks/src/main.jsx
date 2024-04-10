@@ -17,8 +17,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/" element={<App />} />
       <Route path="/use-state" element={<UseStateHook />} />
       <Route path="/use-effect" element={<UseEffectHook />} />
-      <Route path="/use-ref" element={<UseRefHook />} />
       <Route path="/use-ref2" element={<UseRef2 />} />
+      <Route path="/use-ref" element={<UseRefHook />} />
       <Route path="/use-memo" element={<UseMemoHook />} />
       <Route path="/use-memo2" element={<UseMemoExample2 />} />
       <Route path="/custom-hook" element={<MyCustomHook />} />
