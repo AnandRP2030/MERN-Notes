@@ -56,6 +56,13 @@ const cartSlice = createSlice({
       }
       currentProduct.count = currentProduct.count - 1;
 
+      // remove item if count is 0;
+      if (currentProduct.count === 0) {
+        state.cartList = state.cartList.filter(
+          (list) => list?.id !== product?.id
+        );
+      }
+
       state.totalCartItems--;
     },
   },

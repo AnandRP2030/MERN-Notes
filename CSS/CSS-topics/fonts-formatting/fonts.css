@@ -95,10 +95,33 @@ span {
 }
 
 .font-style-1 {
+  color: blue;
 }
 
 .font-style-1:hover {
   font-size: 40px;
   color: red;
   text-shadow: 2px 2px 5px black;
+}
+
+.my-btn {
+  background-color: yellow;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.my-btn:hover {
+  background-color: red;
+
+}
+.my-box {
+  height: 200px;
+  width: 200px;
+  background-color: aqua;
+}
+.my-box:hover {
+  /* box-shadow: 2px 2px black; */
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

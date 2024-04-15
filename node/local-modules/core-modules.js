@@ -1,5 +1,6 @@
 const fs = require("fs");
 
+
 function doRead() {
   fs.readFile("dummy.txt", "utf-8", (err, data) => {
     if (err) {
@@ -24,7 +25,7 @@ function doWrite(textContent) {
 
 // doWrite("its a new data");
 const dataToAppend = "New content to append to the file";
-doWrite(dataToAppend);
+// doWrite(dataToAppend);
 
 function appendNewData(dataToAppend) {
   fs.appendFile("dummy.txt", dataToAppend, "utf8", (err) => {
@@ -35,7 +36,7 @@ function appendNewData(dataToAppend) {
     console.log("Data has been appended to file.");
   });
 }
-appendNewData(dataToAppend);
+// appendNewData(dataToAppend);
 
 function delFile() {
   fs.unlink("dummy.txt", (err) => {
