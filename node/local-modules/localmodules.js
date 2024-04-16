@@ -17,8 +17,9 @@ function getData() {
   return data;
 }
 
-module.exports = {
-  findSum,
-  getData,
-  sayHello,
-};
+module.exports = findSum;
+// module.exports = {
+//   findSum,
+//   getData,
+//   sayHello,
+// };

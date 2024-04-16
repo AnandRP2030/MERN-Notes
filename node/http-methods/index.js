@@ -1,15 +1,17 @@
 const http = require('http');
 
+
 const server = http.createServer((req, res) => {
   // Handle the incoming HTTP request
   console.log(`Received ${req.method} request to ${req.url}`);
-
   // Set the response status code and headers
   res.statusCode = 200; 
+
+
   res.setHeader('Content-Type', 'text/plain');
 
   // Send the response
-  res.end('Hello, World!\n');
+  res.end('Hey everyone!\n');
 });
 
 const port = 3010;
