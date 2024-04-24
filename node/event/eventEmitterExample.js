@@ -14,8 +14,9 @@ const eventHandler2 = () => {
 // Register the event handler for the 'myEvent' event
 // myEmitter.on('myEvent', eventHandler);
 myEmitter.on("myEvent2", eventHandler2);
+myEmitter.on("eventLast", eventHandler)
 // Emit the 'myEvent' event
-myEmitter.emit('myEvent2');
+myEmitter.emit('eventLast');
 
 // We first import the EventEmitter module from the Node.js core library.
 // We create an instance of EventEmitter called myEmitter.
