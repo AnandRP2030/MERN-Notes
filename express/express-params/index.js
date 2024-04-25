@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 8080;
 app.use(express.json());
-const {userRoutes} = require("./routes/users/users.js");
+const {userRoutes} = require("./routes/users/users.routes.js");
 const {productRoutes} = require('./routes/products/produt.js');
-
+const {connectDb} = require("./connectDb.js");
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
@@ -13,9 +13,18 @@ app.get("/", (req, res) => {
 app.use("/user", userRoutes);
 app.use("/product", productRoutes)
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// connectDb();
+// app.listen(port, () => {
+//   console.log(`Server started on port: ${port}`);
+// });
+
+connectDb().then(() => {
+
+  app.listen(port, () => {
+    console.log(`Server started on port: ${port}`);
+  });
+})
+
 
 // http://localhost:3000/user/get-user
 // http://localhost:3000/user/1
