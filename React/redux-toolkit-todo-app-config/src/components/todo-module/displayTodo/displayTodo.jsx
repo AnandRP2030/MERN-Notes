@@ -25,7 +25,7 @@ export const DisplayTodo = () => {
     } else {
       setTodoItems(items);
     }
-  }, []);
+  }, [items, currentVisibilityStatus]);
   const handleShowChange = (e) => {
     console.log("ee", e.target.value);
   };

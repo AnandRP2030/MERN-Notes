@@ -16,8 +16,9 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addNewItem: (state, action) => {
-      state.items.push({ name: action.payload, status: DEFAULT_TASK_STATUS });
+      state.items.push({ name: action.payload, status: TASK_STATUS.PENDING });
     },
+
   },
 });
 
