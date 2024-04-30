@@ -1,24 +1,49 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
+import { Button, Table } from "react-bootstrap";
 const UseEffectHook = () => {
   const [count, setCount] = useState(2);
   const [newComp, setNewComp] = useState(false);
-
-
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    console.log("Component mount");
+    // component mount state
+    getData(); // 5 sec
+
+    return () => {
+      console.log("Un mount handling")
+    }
   }, []);
 
+  const getData = async () => {
+    try {
+      let res = await axios.get("https://jsonplaceholder.typicode.com/posts/");
+      let data = res.data;
+      setUsers(data);
+    } catch (error) {
+      console.log("Error on get data", error);
+    }
+  };
+
+  // useEffect(() => {
+  //   console.log("Component mount");
+  // }, []);
 
   useEffect(() => {
     console.log("inside 2nd useffect, current count", count);
-  }, [count]);
+  }, [users]);
 
-
-  const inc = () => {
+  const inc = (index) => {
     setCount(count + 1);
   };
 
+  const handleDelete = (index) => {
+    const usersCopy = [...users];
+    usersCopy.splice(index, 1);
+    setUsers(usersCopy);
+  };
+
+  
   return (
     <div>
       <h1> Use Effect Hook</h1>
@@ -44,6 +69,45 @@ const UseEffectHook = () => {
       </button>
       {/* conditional rendering  */}
       {newComp ? <NewComponent /> : <OldComponent />}
+      {users.length === 0 && true && <h1> No users available</h1>}
+      {users.length > 0 && (
+        <div>
+          <h1> Users List </h1>
+
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th> Delete </th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((elem, index, arr) => {
+                return (
+                  <tr key={elem.id}>
+                    <td>{index + 1}</td>
+                    <td>{elem.title}</td>
+                    <td>{elem.body}</td>
+                    <td>
+                      <Button
+                        variant="danger"
+                        onClick={() => {
+                          handleDelete(index);
+                        }}
+                      >
+                        {" "}
+                        Delete
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        </div>
+      )}
     </div>
   );
 };

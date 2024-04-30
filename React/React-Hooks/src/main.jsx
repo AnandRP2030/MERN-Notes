@@ -11,18 +11,24 @@ import UseRefHook from "./Hooks/useRef/useRef.jsx";
 import UseMemoExample2 from "./Hooks/UseMemo/useMemohook2.jsx";
 import UseRef2 from "./Hooks/useRef/useRef2.jsx";
 import FetchComponent from "./Hooks/customHooks/useFetch.jsx";
+import { GetInputValue } from "./Hooks/useRef/userRefGetInputValue.jsx";
+import { StrictMode } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/use-state" element={<UseStateHook />} />
-      <Route path="/use-effect" element={<UseEffectHook />} />
-      <Route path="/use-ref2" element={<UseRef2 />} />
-      <Route path="/use-ref" element={<UseRefHook />} />
-      <Route path="/use-memo" element={<UseMemoHook />} />
-      <Route path="/use-memo2" element={<UseMemoExample2 />} />
-      <Route path="/custom-hook" element={<MyCustomHook />} />
-      <Route path="/custom-hook2" element={<FetchComponent />} />
-    </Routes>
-  </BrowserRouter>
+  <StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/use-state" element={<UseStateHook />} />
+        <Route path="/use-effect" element={<UseEffectHook />} />
+        <Route path="/use-ref2" element={<UseRef2 />} />
+        <Route path="/use-ref1" element={<GetInputValue />} />
+        <Route path="/use-ref" element={<UseRefHook />} />
+        <Route path="/use-memo" element={<UseMemoHook />} />
+        <Route path="/use-memo2" element={<UseMemoExample2 />} />
+        <Route path="/custom-hook" element={<MyCustomHook />} />
+        <Route path="/custom-hook2" element={<FetchComponent />} />
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>
 );

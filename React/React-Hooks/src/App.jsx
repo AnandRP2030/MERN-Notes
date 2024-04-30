@@ -1,7 +1,8 @@
+import styles from "./myNewStyle.module.css";
 function App() {
   return (
     <>
-      <h1> This project is for hooks, just visit hooks folder and routes </h1>
+      <h1 className={styles.heading}> This project is for hooks, just visit hooks folder and routes </h1>
     </>
   );
 }

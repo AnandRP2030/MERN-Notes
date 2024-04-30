@@ -39,6 +39,25 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-module.exports = { createUser, getAllUsers };
+const getUserById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (!id) {
+      return res.status(400).json({ message: "Id is required" });
+    }
+
+    const user = await UserModel.findById(id);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    return res
+      .status(200)
+      .json({ message: "user fetched successfully.", data: user });
+  } catch (error) {
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
+module.exports = { createUser, getAllUsers, getUserById };
 
 // Database interactios are time consuming
