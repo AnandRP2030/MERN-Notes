@@ -41,8 +41,26 @@ const getAllStudents = async (req, res) => {
     return res.status(500).send({ message: error.message });
   }
 };
+const getStudentById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send("All fields are required");
+    }
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).send("Invalid student id");
+    }
+    const student = await StudentModel.findById(id);
+    if (!student) {
+      return res.status(404).send("Student not found");
+    }
+    return res.status(200).json({ message: "Student found", data: student });
+  } catch (err) {
+    return res.status(500).send({ message: err.message });
+  }
+}
 
-const updateStudentDetailsById = async (req, res) => {
+const updateStudentById = async (req, res) => {
   try {
     const { id } = req.params;
     if (!id) {
@@ -91,7 +109,8 @@ const deleteStudentById = async (req, res) => {
 };
 module.exports = {
   createNewStudent,
-  updateStudentDetailsById,
+  updateStudentById,
   getAllStudents,
   deleteStudentById,
+  getStudentById
 };
