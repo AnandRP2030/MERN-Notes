@@ -16,3 +16,18 @@ Express serves as a routing and Middleware framework for handling the different 
 ### 2. Middleware functions execute some code that can have side effects on the app and usually add information to the request or response objects.
 
 ### 3. They are also capable of ending the cycle by sending a response when some condition is satisfied. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, next().
+
+
+## Differnet Types Middlewares
+### 1. Built-in middleware: Provided by Express (e.g., express.static, express.json, etc.).
+### 2. Third-party middleware: Developed by external packages (e.g., body-parser, morgan, etc.).
+### Application-level middleware: Bound to the entire application using app.use() or app.METHOD() and executes for all routes.
+### Router-level middleware: Associated with specific routes using router.use() or router.METHOD() and executes for routes defined within that router.
+
+
+## Advantages of using Middleware
+### => Middleware can process request objects multiple times before the server works for that request.
+### => Middleware can be used to add logging and authentication(jwt) functionality.
+### => Middleware improves client-side rendering performance.
+### => Middleware is used for setting some specific HTTP headers.
+### => Middleware helps with Optimization and better performance.

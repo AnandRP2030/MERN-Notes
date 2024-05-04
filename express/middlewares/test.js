@@ -65,6 +65,9 @@ app.get("/middlewares", cb1, cb2, (req, res) => {
   res.send("All middlewars are passed");
 });
 
-app.listen(3000, () => {
+app.listen(3000, (err) => {
+  if (err) {
+    console.log("Error on server")
+  }
   console.log("listening on port 3000");
 });
