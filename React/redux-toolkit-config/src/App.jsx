@@ -6,6 +6,7 @@ function App() {
   const st = useSelector((state) => state);
   const name = useSelector((state) => state.user.name);
   console.log("st", st);
+  
   console.log("data", name);
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       </div>
 
       <h1> Login Page </h1>
+
       <Login />
     </>
   );

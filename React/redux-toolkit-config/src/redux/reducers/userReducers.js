@@ -1,13 +1,18 @@
 // store.js
 import {  createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  name: "",
+  age: "",
+  address: "",
+  phoneNumber: ""
+
+}
 // Define a slice for user data
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    name: "",
+  initialState,
     
-  },
   reducers: {
     addUser: (state, action) => {
         console.log("action", action)
@@ -16,11 +21,14 @@ const userSlice = createSlice({
     removeUser: (state, action) => {
       state.name = "";
     },
+
   },
 });
 
 // Extract the action creators and reducer
 export const { addUser, removeUser } = userSlice.actions;
+
+
 export default userSlice.reducer;
 // export default userReducer;
 
