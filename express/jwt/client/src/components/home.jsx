@@ -1,11 +1,13 @@
-import React from "react";
+import axios from 'axios';
+import React, { useEffect, useState } from "react";
 import { MyNavbar } from "./navbar";
 
 export function Home() {
   return (
     <>
       <MyNavbar />
-      <div>Home</div>
+      <h1>Home Page</h1>
     </>
   );
 }
+

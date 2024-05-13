@@ -5,11 +5,14 @@ const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 3443;
 const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
+const cors = require('cors');
+app.use(cors());
 const { authenticateToken } = require("./middlewares/jwtAuthentication");
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send(`<h1> Server working on: http://localhost:${PORT}</h1>`);
 });
+
 
 const dummyDb = [
   {
@@ -37,7 +40,7 @@ const dummyDb = [
 
 // payload is a data that we store inside jwt
 function generateAccessToken(payload) {
-  return jwt.sign(payload, TOKEN_SECRET_KEY, { expiresIn: "24h" });
+  return jwt.sign(payload, TOKEN_SECRET_KEY);
 }
 
 app.post("/user/signin", (req, res) => {
@@ -46,6 +49,7 @@ app.post("/user/signin", (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: "All fields are required." });
     }
+    // here use Model.find({email})
     const user = dummyDb.find((user) => user.email === email);
     if (!user) {
       return res
@@ -84,6 +88,9 @@ const dummyPremiumRes = [
     price: 3000,
   },
 ];
+app.get('/user', authenticateToken, (req, res) => {
+  return res.status(200).json({userData: req.user})
+})
 app.get("/user/premium-products", authenticateToken, (req, res) => {
   // other validations if needed
   res
