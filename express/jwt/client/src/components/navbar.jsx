@@ -16,21 +16,26 @@ export function MyNavbar() {
     if (token) {
       getUserData(token);
     }else {
-      setUserData(null)
+      setUserData(null) 
     }
   }, []);
   const getUserData = async (token) => {
-    let res = await axios.get("http://localhost:3443/user", {
-      headers: {
-        Authorization: `Beareer ${token}`,
-      },
-    });
-    const data = res?.data?.userData || null;
-    if (data) {
-      console.log("Data", data);
-      setUserData(data);
-    } else {
-      console.log("User data not found");
+    try {
+      
+      let res = await axios.get("http://localhost:3443/user", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = res?.data?.userData || null;
+      if (data) {
+        console.log("Data", data);
+        setUserData(data);
+      } else {
+        console.log("User data not found");
+      }
+    } catch (error) {
+      console.error("Error on get user data", error);
     }
   };
   return (

@@ -4,9 +4,12 @@ const {
   createUser,
   getAllUsers,
   getUserById,
+  signinUser,
 } = require("./users.controller.js");
 
 userRoutes.post("/signup", createUser);
+userRoutes.post("/signin", signinUser);
+
 userRoutes.get("/get-all-users", getAllUsers);
 userRoutes.get("/:id", getUserById);
 

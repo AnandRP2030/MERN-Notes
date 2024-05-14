@@ -5,14 +5,13 @@ const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 3443;
 const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
-const cors = require('cors');
+const cors = require("cors");
 app.use(cors());
 const { authenticateToken } = require("./middlewares/jwtAuthentication");
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send(`<h1> Server working on: http://localhost:${PORT}</h1>`);
 });
-
 
 const dummyDb = [
   {
@@ -63,7 +62,9 @@ app.post("/user/signin", (req, res) => {
         .json({ message: "Email or password id incorrect." });
     }
     const copyUser = { ...user };
+    console.log("before copy user", copyUser)
     delete copyUser.password;
+    console.log("copy user", copyUser)
     const accessToken = generateAccessToken(copyUser);
 
     return res.status(200).json({ message: "Login Successful", accessToken });
@@ -88,18 +89,16 @@ const dummyPremiumRes = [
     price: 3000,
   },
 ];
-app.get('/user', authenticateToken, (req, res) => {
-  return res.status(200).json({userData: req.user})
-})
+app.get("/user", authenticateToken, (req, res) => {
+  return res.status(200).json({ userData: req.user });
+});
 app.get("/user/premium-products", authenticateToken, (req, res) => {
   // other validations if needed
-  res
-    .status(200)
-    .json({
-      message: "Premium resources",
-      userData: req.user,
-      data: dummyPremiumRes,
-    });
+  res.status(200).json({
+    message: "Premium resources",
+    userData: req.user,
+    data: dummyPremiumRes,
+  });
 });
 
 app.all("/*", (req, res) => {

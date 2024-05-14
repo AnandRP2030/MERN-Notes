@@ -84,19 +84,15 @@ app.post("/signup", (req, res) => {
   }
 
   const newUser = {
-    
     id: arr.length + 1,
     username,
     email,
-    password
+    password,
   };
   arr.push(newUser);
   return res
     .status(201)
     .json({ message: "User created successfully", data: newUser });
-
-
-  
 });
 app.get("/users", (req, res) => {
   const { pincode, state, country } = req.query;
@@ -164,18 +160,3 @@ app.post("/signup", (req, res) => {
   return res.json({ data: arr, message: "Signup Successfully" });
 });
 
-app.post("/signin", (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(404).json({ message: "Please provide email & password" });
-  }
-  const user = arr.find(
-    (user) => user.email === email && user.password === password
-  );
-  if (!user) {
-    return res
-      .status(404)
-      .json({ message: "Please check your email id & password" });
-  }
-  return res.status(200).json({ data: user, message: "Login Successfully" });
-});

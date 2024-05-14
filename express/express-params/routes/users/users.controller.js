@@ -1,4 +1,6 @@
 const { UserModel } = require("./users.model");
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const createUser = async (req, res) => {
   try {
@@ -8,9 +10,16 @@ const createUser = async (req, res) => {
     }
 
     const isUserAleradyExist = await UserModel.findOne({ email });
+    console.log("isuser al", isUserAleradyExist)
+    delete isUserAleradyExist.password
+    console.log("isuser al", isUserAleradyExist)
     if (isUserAleradyExist) {
       return res.status(400).json({ message: "Email id already taken" });
     }
+
+    // bcrypt.genSalt(saltRounds, function (err, salt) {
+
+    // })
 
     const newUser = new UserModel({
       name,
@@ -39,6 +48,24 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+
+
+const signinUser = async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(404).json({ message: "Please provide email & password" });
+  }
+  const user = arr.find(
+    (user) => user.email === email && user.password === password
+  );
+  if (!user) {
+    return res
+      .status(404)
+      .json({ message: "Please check your email id & password" });
+  }
+  return res.status(200).json({ data: user, message: "Login Successfully" });
+};
+
 const getUserById = async (req, res) => {
   try {
     const id = req.params.id;
@@ -58,6 +85,6 @@ const getUserById = async (req, res) => {
   }
 };
 
-module.exports = { createUser, getAllUsers, getUserById };
+module.exports = { createUser, getAllUsers, getUserById, signinUser };
 
 // Database interactios are time consuming
