@@ -7,7 +7,7 @@ const createNewStudent = async (req, res) => {
       return res.status(400).send("All fields are required");
     }
     console.log("body", req.body);
-    const isEmailAlreadyExist = await StudentModel.findOne({ email });
+    const isEmailAlreadyExist = await StudentModel.findOne({ email }); // {}
 
     if (isEmailAlreadyExist) {
       return res.status(400).json({ message: "Email already exist" });
@@ -19,6 +19,7 @@ const createNewStudent = async (req, res) => {
       joiningDate,
       email,
     });
+    // save 
     await newStudent.save();
     return res
       .status(200)
@@ -30,6 +31,7 @@ const createNewStudent = async (req, res) => {
 
 const getAllStudents = async (req, res) => {
   try {
+    // allStudents [] format
     const allStudnets = await StudentModel.find();
     if (allStudnets.length === 0) {
       return res.status(404).send({ message: "No students found" });
