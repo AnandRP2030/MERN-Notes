@@ -11,7 +11,7 @@ function App() {
       <h1> Context API</h1>
       {/* <Login />
       <Profile /> */}
-      <MainContainer text={text}/>
+      {/* <MainContainer text={text}/> */}
     </>
   );
 }

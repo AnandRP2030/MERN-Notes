@@ -2,11 +2,13 @@ import { useState } from "react";
 import UserContext from "./UserContext";
 const UserContextProvider = ({ children }) => {
   console.log("childrens", children);
-  const [user, setUser] = useState({});
-  
-  const theme = "dark";
+  const [user, setUser] = useState("");
+
+  const updateUserValue = (newUserName) => {
+    setUser(newUserName);
+  };
   return (
-    <UserContext.Provider value={{ user, setUser, theme }}>
+    <UserContext.Provider value={{ user, updateUserValue }}>
       {children}
     </UserContext.Provider>
   );

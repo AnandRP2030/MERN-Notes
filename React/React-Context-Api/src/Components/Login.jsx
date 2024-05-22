@@ -7,7 +7,7 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setUser } = useContext(UserContext);
+  const {  updateUserValue } = useContext(UserContext);
   // useContext hook
 
   const navigate = useNavigate();
@@ -16,7 +16,11 @@ export default function Login() {
   };
   const handleLogin = (e) => {
     e.preventDefault();
-    setUser({ username, password });
+
+// Login Logic
+
+
+     updateUserValue(username);
     redirectProfile();
   };
   return (

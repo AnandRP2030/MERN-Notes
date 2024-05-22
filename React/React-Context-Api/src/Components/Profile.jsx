@@ -12,7 +12,7 @@ export default function Profile() {
       <h1>Profile Page</h1>
       {user && (
         <>
-          <h1>Username: {user.username}</h1>
+          <h1>Username: {user}</h1>
         </>
       )}
     </>
