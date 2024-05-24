@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 app.use("/student", studentRoutes);
 app.use("/exam", examsRoutes);
-app.use("/teacher", teacherRoutes);
+app.use("/teachers", teacherRoutes);
 connectDb().then(() => {
   app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
