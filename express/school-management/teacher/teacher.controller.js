@@ -86,15 +86,16 @@ const getTeacherById = async (req, res) => {
   }
 };
 
-const updateTeacher = async (req, res) => {
+const updateTeacherById = async (req, res) => {
   try {
     const id = req.params.id;
-    const { password} = req.body;
-   
+    const { password, name } = req.body;
+
     const isIdValid = mongoose.Types.ObjectId.isValid(id);
     if (!isIdValid) {
       return res.status(400).json({ message: "Id is not valid" });
     }
+
     const teacher = await TeacherModel.findById(id);
     if (!teacher) {
       return res.status(404).json({ message: "Teacher not found" });
@@ -103,12 +104,40 @@ const updateTeacher = async (req, res) => {
     if (password) {
       teacher.password = password;
     }
+    if (name) {
+      teacher.fullName = name;
+    }
     await teacher.save();
     return res.status(200).json({ message: "Teacher updated", data: teacher });
   } catch (error) {
     console.error("Error on update teacher");
     return res.status(500).json({ message: "Server error", error });
-  } 
+  }
+};
+
+const deleteTeacherById = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    const isIdValid = mongoose.Types.ObjectId.isValid(id);
+    if (!isIdValid) {
+      return res.status(400).json({ message: "Id is not valid" });
+    }
+
+    const teacher = TeacherModel.findById(id);
+    if (!teacher) {
+      return res.status(404).json({ message: "Teacher not found" });
+    }
+
+    let deletedTeacher = await TeacherModel.findByIdAndDelete(id);
+
+    return res
+      .status(200)
+      .json({ message: "Teacher deleted", data: deletedTeacher });
+  } catch (error) {
+    console.error("Error on delete teacher");
+    return res.status(500).json({ message: "Server error", error });
+  }
 };
 
 module.exports = {
@@ -116,4 +145,6 @@ module.exports = {
   loginTeacher,
   allTeachers,
   getTeacherById,
+  updateTeacherById,
+  deleteTeacherById
 };
