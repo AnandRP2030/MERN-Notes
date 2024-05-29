@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const { connectDb } = require("./connectDb");
+const cors = require('cors')
 app.use(express.json());
+app.use(cors())
 const { studentRoutes } = require("./student/school.routes");
 const { examsRoutes } = require("./exams/exams.routes");
 const { teacherRoutes } = require("./teacher/teacher.routes");

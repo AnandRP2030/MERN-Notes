@@ -2,11 +2,18 @@ const { StudentModel } = require("./school.model");
 const mongoose = require("mongoose");
 const createNewStudent = async (req, res) => {
   try {
-    const { name, age, email, joiningDate } = req.body;
-    if (!name || !age || !email) {
+    console.log("req.body", req.body)
+    const { name, age, email,  gender, password} = req.body;
+    if (!name || !age || !email || !gender || !password) {
       return res.status(400).send("All fields are required");
     }
-    console.log("body", req.body);
+
+
+    if (!(gender === "Male" || gender === "Female" || gender === "Other")) {
+        return res.status(400).json({message: "invalid gender"});
+    }
+
+    const ageToNumber = parseInt(age);
     const isEmailAlreadyExist = await StudentModel.findOne({ email }); // {}
 
     if (isEmailAlreadyExist) {
@@ -15,8 +22,9 @@ const createNewStudent = async (req, res) => {
 
     const newStudent = new StudentModel({
       name,
-      age,
-      joiningDate,
+      age: ageToNumber,
+      gender,
+      password,
       email,
     });
     // save 
@@ -76,9 +84,20 @@ const updateStudentById = async (req, res) => {
       return res.status(404).send("Student not found");
     }
     const { name, age, email } = req.body;
+    let obj  = {};
+    if (name) {
+      obj.name = name;
+    }
+
+    if (age) {
+      obj.age = age;
+    }
+    if (email) {
+      obj.email = email;
+    }
     const updatedStudent = await StudentModel.findByIdAndUpdate(
       id,
-      { name, age, email },
+     obj,
       { new: true }
     );
     return res.status(200).json({
