@@ -18,14 +18,13 @@ const passwordFromDb = "123456"
 
 
 // create a middleware
-app.post("/login", validateEmail, validatePassword, (req, res) => {
+app.post("/login",validateEmail, validatePassword,  (req, res) => {
     const {email, password} = req.body;
     if (emailFromDb === email && password === passwordFromDb) {
         return res.status(200).json({message: "Login success"})
     }
     return res.status(404).json({error: "Please check your email & password"})
 });
-
 
 // handling error routes
 app.all('/*', (req, res) => {

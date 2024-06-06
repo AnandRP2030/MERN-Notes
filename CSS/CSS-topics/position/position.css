@@ -14,10 +14,10 @@
   top: 0px;
 } */
 
-/* .child-4 {
+.child-4 {
   position: sticky;
   top: 0;
-} */
+}
 
 .parent {
   position: relative;

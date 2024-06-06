@@ -14,26 +14,41 @@ const createUser = async (req, res) => {
       return res.status(400).json({ message: "Email id already taken" });
     }
 
-    bcrypt.hash(password, saltRounds, async function (err, hashedPassword) {
-      if (err) {
-        console.log("Error on hasing data", err);
-        return res.status(400).json({
-          message: "Error on hashing password please try again later.",
-        });
-      }
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    console.log("hhs", hashedPassword);
 
-      const newUser = new UserModel({
-        name,
-        email,
-        age,
-        password: hashedPassword,
-      });
-      await newUser.save();
-
-      return res
-        .status(200)
-        .json({ message: "Signup Successfully", data: newUser });
+    const newUser = new UserModel({
+      name,
+      email,
+      age,
+      password: hashedPassword,
     });
+    await newUser.save();
+
+    return res
+      .status(200)
+      .json({ message: "Signup Successfully", data: newUser });
+
+    // bcrypt.hash(password, saltRounds, async function (err, hashedPassword) {
+    //   if (err) {
+    //     console.log("Error on hasing data", err);
+    //     return res.status(400).json({
+    //       message: "Error on hashing password please try again later.",
+    //     });
+    //   }
+
+    //   const newUser = new UserModel({
+    //     name,
+    //     email,
+    //     age,
+    //     password: hashedPassword,
+    //   });
+    //   await newUser.save();
+
+    //   return res
+    //     .status(200)
+    //     .json({ message: "Signup Successfully", data: newUser });
+    // });
   } catch (error) {
     return res.status(500).json({ message: "Server error" });
   }

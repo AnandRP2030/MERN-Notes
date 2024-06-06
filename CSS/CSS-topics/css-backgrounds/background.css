@@ -15,7 +15,12 @@ body {
 /* Background Image */
 #bg-image {
   background-image: url("https://picsum.photos/200");
-  background-repeat: no-repeat;
+
+
+
+
+  
+  /* background-repeat: no-repeat; */
   height: 300px;
   background-position: center;
   background-color: #cccccc;

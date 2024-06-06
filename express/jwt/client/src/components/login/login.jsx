@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./login.css";
 import instance from "../../apis/instance";
 import { useState } from "react";
+import axios from "axios";
 export const Login = () => {
   const navigate = useNavigate();
   function redirectToHome() {
@@ -12,11 +13,9 @@ export const Login = () => {
   const [password, setPassword] = useState("1234abcd");
 
   const submitForm = async () => {
+    let obj = {email, password}
     try {
-      const res = await instance.post("user/signin", {
-        email,
-        password,
-      });
+      const res = await axios.post("http://localhost:3443/user/signin", obj);
       let data = res.data;
       let token = data.accessToken;
       if (token) {

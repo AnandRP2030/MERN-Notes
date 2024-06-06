@@ -65,6 +65,7 @@ span {
 /* anchor tag different states for text */
 .my-link:link {
   color: red;
+  
 }
 /* if already visited  */
 .my-link:visited {
@@ -72,6 +73,7 @@ span {
 }
 .my-link:hover {
   color: blue;
+  font-size: 50px;
 }
 /* if clicked */
 .my-link:active {
@@ -124,4 +126,10 @@ span {
 .my-box:hover {
   /* box-shadow: 2px 2px black; */
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.my-para {
+  border: 3px dashed rgb(145, 51, 51);
+border-radius: 5px;
+border-bottom-color:green;
 }

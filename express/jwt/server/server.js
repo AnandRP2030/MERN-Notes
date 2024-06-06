@@ -39,7 +39,7 @@ const dummyDb = [
 
 // payload is a data that we store inside jwt
 function generateAccessToken(payload) {
-  return jwt.sign(payload, TOKEN_SECRET_KEY);
+  return jwt.sign(payload, "1234ABCD");
 }
 
 app.post("/user/signin", (req, res) => {
@@ -61,13 +61,16 @@ app.post("/user/signin", (req, res) => {
         .status(404)
         .json({ message: "Email or password id incorrect." });
     }
+
     const copyUser = { ...user };
-    console.log("before copy user", copyUser)
+    console.log("before copy user", copyUser);
     delete copyUser.password;
-    console.log("copy user", copyUser)
+    console.log("copy user", copyUser);
     const accessToken = generateAccessToken(copyUser);
 
-    return res.status(200).json({ message: "Login Successful", accessToken });
+    return res
+      .status(200)
+      .json({ message: "Login Successful", data: user, accessToken });
   } catch (error) {
     if (error) {
       return res.status(500).json({ message: error.message });
@@ -90,8 +93,11 @@ const dummyPremiumRes = [
   },
 ];
 app.get("/user", authenticateToken, (req, res) => {
+  // other validations if needed
   return res.status(200).json({ userData: req.user });
-});
+}); 
+
+
 app.get("/user/premium-products", authenticateToken, (req, res) => {
   // other validations if needed
   res.status(200).json({
