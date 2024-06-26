@@ -1,11 +1,14 @@
 body {
   background-color: black;
   color: white;
+
 }
 /* 1.  Descendant Selector (Space): */
 .box h1 {
   color: red;
+  background-color: green;
 }
+
 
 /* 2 child selector  */
 .box-2 > h1 {
@@ -17,6 +20,7 @@ body {
 
 h3 ~ p {
   color: orange;
+  font-size: 40px;
 }
 
 /* Adjacent(തൊട്ടടുത്തുള്ള) Sibling Selector (+):
@@ -26,3 +30,11 @@ The adjacent sibling selector selects an element that is immediately preceded by
 h6 + p {
   color: aqua;
 }
+
+.h4-class + h1{
+  font-size: 60px;
+  color: red;
+}
+
+
+

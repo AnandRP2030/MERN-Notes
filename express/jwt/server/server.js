@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3443;
 const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
 const cors = require("cors");
 app.use(cors());
-const { authenticateToken } = require("./middlewares/jwtAuthentication");
+const { protectRoute } = require("./middlewares/jwtAuthentication");
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send(`<h1> Server working on: http://localhost:${PORT}</h1>`);
@@ -39,7 +39,8 @@ const dummyDb = [
 
 // payload is a data that we store inside jwt
 function generateAccessToken(payload) {
-  return jwt.sign(payload, "1234ABCD");
+  const token = jwt.sign(payload, TOKEN_SECRET_KEY);
+  return token;
 }
 
 app.post("/user/signin", (req, res) => {
@@ -70,7 +71,7 @@ app.post("/user/signin", (req, res) => {
 
     return res
       .status(200)
-      .json({ message: "Login Successful", data: user, accessToken });
+      .json({ message: "Login Successful",token:  accessToken });
   } catch (error) {
     if (error) {
       return res.status(500).json({ message: error.message });
@@ -92,13 +93,15 @@ const dummyPremiumRes = [
     price: 3000,
   },
 ];
-app.get("/user", authenticateToken, (req, res) => {
+
+
+app.get("/user", protectRoute, (req, res) => {
   // other validations if needed
   return res.status(200).json({ userData: req.user });
 }); 
 
 
-app.get("/user/premium-products", authenticateToken, (req, res) => {
+app.get("/user/premium-products", protectRoute, (req, res) => {
   // other validations if needed
   res.status(200).json({
     message: "Premium resources",

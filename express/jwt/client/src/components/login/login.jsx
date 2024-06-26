@@ -16,8 +16,9 @@ export const Login = () => {
     let obj = {email, password}
     try {
       const res = await axios.post("http://localhost:3443/user/signin", obj);
+      console.log("ress", res)
       let data = res.data;
-      let token = data.accessToken;
+      let token = data.token;
       if (token) {
         localStorage.setItem("power-token", token);
         // alert("Login Successful");

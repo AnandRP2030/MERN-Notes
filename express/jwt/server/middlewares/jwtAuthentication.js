@@ -1,6 +1,6 @@
 const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
 const jwt = require("jsonwebtoken");
-function authenticateToken(req, res, next) {
+function protectRoute(req, res, next) {
 
   const authHeader = req.headers["authorization"];
   console.log("auth header", authHeader)
@@ -9,7 +9,8 @@ function authenticateToken(req, res, next) {
   if (!token) {
     return res.status(403).json({ message: "Authentication failed." });
   }
-  jwt.verify(token, `1234ABCD`, (err, user) => {
+
+  jwt.verify(token, TOKEN_SECRET_KEY, (err, user) => {
     console.log("Error on token authentication", err);
     if (err) {
       return res.status(403).json({ message: "Authentication failed." });
@@ -20,4 +21,4 @@ function authenticateToken(req, res, next) {
   });
 }
 
-module.exports = { authenticateToken };
+module.exports = { protectRoute };

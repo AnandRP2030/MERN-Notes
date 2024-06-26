@@ -69,6 +69,8 @@ const loginUser = async (req, res) => {
         .json({ message: "Please check your email id and password." });
     }
 
+   
+
     const isPasswordMatch = await bcrypt.compare(password, user.password); // true /false
     if (!isPasswordMatch) {
       return res

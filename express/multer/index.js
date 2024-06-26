@@ -9,24 +9,17 @@ app.get('/', (req, res) => {
         message: "Hello World"
     })
 })
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'uploads/')
-    },
-    filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, "a"+file.originalname)
-    }
-  })
-  
-  const upload = multer({ storage: storage })
 
-  const upload2 = multer ({storage})
+app.post('/user/signup', upload.single("profilePicture"),  (req, res) => {
+  console.log("")
+  let obj = req.file;
+  console.log("obj", obj)
 
-app.post('/api/upload', upload2.single('img'), (req, res) => {
-    res.json({message: 'Upload successfully.', filename: req.file})
+    res.json({message: 'Upload successfully.', profilePicture: req.file})
 })
+
 
 app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
 })
+

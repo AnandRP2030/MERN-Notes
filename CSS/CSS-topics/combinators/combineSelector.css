@@ -15,3 +15,7 @@ p {
 span {
     
 }
+
+h2, h3, .box, #navbar {
+    color: red;
+}

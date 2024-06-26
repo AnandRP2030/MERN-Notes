@@ -1,6 +1,6 @@
 # Combinators
 
-Combinators, on the other hand, are specific symbols used to define relationships between selectors. They include the space (descendant selector), > (child selector), + (adjacent sibling selector), and ~ (general sibling selector).
+Combinators, are specific symbols used to define relationships between selectors. They include the space (descendant selector), > (child selector), + (adjacent sibling selector), and ~ (general sibling selector).
 
 ### 1. Descendant Selector (Space):
 

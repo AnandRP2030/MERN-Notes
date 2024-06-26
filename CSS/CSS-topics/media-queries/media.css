@@ -17,6 +17,7 @@ body {
 /* max-width works if screen size under 900px value  */
 @media only screen and (max-width: 900px) {
   .container {
+    gap: 10px;
     flex-wrap: wrap;
   }
   .box {
@@ -27,6 +28,30 @@ body {
     color: green;
   }
 }
+@media only screen and (max-width: 600px) {
+  .container {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .box {
+    background-color: yellow;
+  }
+  h1 {
+    font-size: 25px;
+    color: green;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* media queries  */
@@ -48,11 +73,13 @@ body {
 @media only screen and (min-width: 601px) and (max-width: 900px) {
   body {
     background-color: blueviolet;
+
   }
+  
 }
 
 /* Styles for screens larger than 900 pixels */
-@media screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   body {
     background-color: green;
   }

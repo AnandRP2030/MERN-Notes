@@ -11,6 +11,7 @@ const validateEmail = (req, res, next) => {
     }   
     // can check other validations if needed
     // if its use only for register/signup route then you can check if the email id already taken or not
+    req.userStatus = "active";
     next()
 }
 
