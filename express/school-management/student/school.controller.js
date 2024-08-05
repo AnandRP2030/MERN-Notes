@@ -54,11 +54,12 @@ const getAllStudents = async (req, res) => {
 const getStudentById = async (req, res) => {
   try {
     const { id } = req.params;
+
     if (!id) {
       return res.status(400).send("All fields are required");
     }
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).send("Invalid student id");
+      return res.status(400).json({ message: "Invalid student id" });
     }
     const student = await StudentModel.findById(id);
     if (!student) {

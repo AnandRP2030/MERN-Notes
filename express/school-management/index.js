@@ -12,8 +12,11 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+
 app.use("/student", studentRoutes);
 app.use("/exam", examsRoutes);
+
+
 app.use("/teachers", teacherRoutes);
 connectDb().then(() => {
   app.listen(port, () => {

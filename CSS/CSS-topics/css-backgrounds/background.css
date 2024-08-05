@@ -13,20 +13,16 @@ body {
 }
 
 /* Background Image */
-#bg-image {
+.bg-image100 {
   background-image: url("https://picsum.photos/200");
 
-
-
-
-  
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   height: 300px;
   background-position: center;
   background-color: #cccccc;
   background-size: contain;
-  background-size: cover;
-  background-size: auto;
+  /* background-size: cover; */
+  /* background-size: auto; */
 }
 
 #bg-image-2 {
@@ -77,3 +73,4 @@ body {
 .black-space {
   /* font-family: ; */
 }
+

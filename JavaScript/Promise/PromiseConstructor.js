@@ -24,12 +24,12 @@ getData()
     console.error("Error:", error);
   });
 
-async function collectData() {
-  let data = await getData();
-  console.log("dataasync", data);
-}
+// async function collectData() {
+//   let data = await getData();
+//   console.log("dataasync", data);
+// }
 
-collectData();
+// collectData();
 // async function getData() {
 //   const result = "some string";
 //   return result;

@@ -63,17 +63,19 @@ span {
 }
 
 /* anchor tag different states for text */
-.my-link:link {
-  color: red;
-  
-}
 /* if already visited  */
 .my-link:visited {
   color: green;
 }
+.my-link:link {
+  color: red;
+}
+.my-link {
+  color: black;
+}
 .my-link:hover {
   color: blue;
-  font-size: 50px;
+  /* font-size: 50px; */
 }
 /* if clicked */
 .my-link:active {
@@ -116,7 +118,6 @@ span {
 }
 .my-btn:hover {
   background-color: red;
-
 }
 .my-box {
   height: 200px;
@@ -129,7 +130,28 @@ span {
 }
 
 .my-para {
-  border: 3px dashed rgb(145, 51, 51);
-border-radius: 5px;
-border-bottom-color:green;
+  border: 3px solid rgb(145, 51, 51);
+  border-radius: 5px;
+  border-bottom-color: green;
+}
+
+.text-indent:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.my-ul-list {
+  list-style-type:upper-roman ;
+}
+.my-div {
+  height: 300px;
+  width: 300px;
+
+}
+
+.my-new-div {
+  border: 3px dotted red;
+}
+.my-new-div2 {
+  border: 3px dashed green;
 }
