@@ -5,13 +5,15 @@ import { useState, useRef } from "react";
 export function GetInputValue() {
     const [count, setCount] = useState(0);
   const inputRef = useRef(null);
+  let x = 5;
   const renderCount = useRef(0);
   const handleClick = () => {
     console.log(inputRef);
     alert(inputRef.current.value);
   };
   const focusInput = () => {
-    inputRef.current.focus();
+    console.log('input ref', inputRef);
+    inputRef.current.blur();
   }
   const incCount = () => {
     setCount(count => count + 1);

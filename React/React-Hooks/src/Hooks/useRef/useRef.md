@@ -69,7 +69,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
-  const timerRef = useRef();
+  const timerRef = useRef(null);
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
@@ -78,6 +78,10 @@ const Timer = () => {
 
     return () => clearInterval(timerRef.current);
   }, []);
+
+  function stopTimer () {
+    clearInterval(timeRef.current);
+  }
 
   return (
     <div>
@@ -90,11 +94,3 @@ const Timer = () => {
 export default Timer;
 ```
 Here, `useRef` is used to store the timer ID, allowing the interval to be cleared without causing a re-render.
-
-### Personal Growth Technique: Practice by Building Projects
-To solidify your understanding of `useRef` and other React hooks, try building small projects or components. For example:
-- Create a form that automatically focuses on the next input field after submitting.
-- Build a component that measures and logs the dimensions of a DOM element whenever it changes.
-- Implement a custom video player with play, pause, and seek functionalities using `useRef` to control the video element.
-
-By incorporating `useRef` into practical projects, you'll gain a deeper understanding of its use cases and how it can improve your React applications.

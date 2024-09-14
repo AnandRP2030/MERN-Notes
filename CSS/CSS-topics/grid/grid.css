@@ -11,7 +11,7 @@
 
 .grid-container-3 {
   display: grid;
-  grid-template-columns: 60px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 60px 50px 2fr 1fr 1fr 1fr 1fr;
   gap: 50px;
 }
 
@@ -27,4 +27,5 @@
   grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 3;
+  background-color:green !important;
 }

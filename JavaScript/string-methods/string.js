@@ -1,21 +1,37 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var myPlace = "Trivandrum";
 // get length of the string
 var lengthOfString = myPlace.length;
 console.log("Length of the string:", lengthOfString);
 
 // get a specified char from a string .charAt() method
-const char = myPlace.charAt(50);
+const char = myPlace.charAt(0);
 console.log("value", char);
 
 // combine multiple strings  .concat() method
-const firstName = "Elon";
+const firstName = "Trivandrum";
 const lastName = "Musk";
-const fullName = firstName.concat(" ", lastName, "5656 ",firstName);
+const fullName = firstName.concat(" ",lastName);
 
 console.log("concatination", fullName);  // ElonMusk
 
 // check the character exists
-const indexOfChar = firstName.indexOf("o");
+const indexOfChar = firstName.indexOf("ru");
 const indexOfChar2 = firstName.indexOf("p");
 console.log("index of o", indexOfChar); // 2
 console.log("index of p", indexOfChar2); // -1
@@ -40,7 +56,7 @@ console.log("slice", slicePlace);
 // trim method
 // The trim() method of String values removes whitespace from both ends 
 //of this string and returns a new string, without modifying the original string.
-const welcome = "welcome to India";
+const welcome = "   wel come to India   ";
 console.log(welcome)
 const trimWel = welcome.trim();
 console.log(trimWel); // Welcome to india

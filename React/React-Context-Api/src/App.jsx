@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <h1> Context API</h1>
-      {/* <Login />
-      <Profile /> */}
+      <Login />
+      {/* <Profile /> */}
       {/* <MainContainer text={text}/> */}
     </>
   );

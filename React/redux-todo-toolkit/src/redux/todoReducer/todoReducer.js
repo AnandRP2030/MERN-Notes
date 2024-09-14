@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  todos: [
-  
-  ],
+  todos: [],
   completedTodo: [],
 };
 const todoSlice = createSlice({
@@ -24,8 +22,6 @@ const todoSlice = createSlice({
     completeTodo: () => {
 
     }
-
-    
   },
 });
 

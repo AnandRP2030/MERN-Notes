@@ -60,6 +60,8 @@ span {
 .text-indent {
   /* // create indentation in text */
   text-indent: 50px;
+  margin: 10px 20px 5px;
+  background-color: yellow;
 }
 
 /* anchor tag different states for text */
@@ -75,7 +77,7 @@ span {
 }
 .my-link:hover {
   color: blue;
-  /* font-size: 50px; */
+  font-size: 10px;
 }
 /* if clicked */
 .my-link:active {
@@ -115,9 +117,12 @@ span {
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 20px;
+  cursor: none;
 }
 .my-btn:hover {
   background-color: red;
+  color: white;
+  font-size: 10px;
 }
 .my-box {
   height: 200px;
@@ -155,3 +160,6 @@ span {
 .my-new-div2 {
   border: 3px dashed green;
 }
+
+
+/* pseduo selector  */

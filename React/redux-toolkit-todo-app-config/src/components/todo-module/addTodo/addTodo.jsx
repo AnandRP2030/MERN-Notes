@@ -13,6 +13,8 @@ export const AddTodo = () => {
     }
     dispatch(addNewItem(todoItem))
   }
+
+
   return (
     <>
       <h1> Todo App </h1>
