@@ -8,10 +8,8 @@ const UseMemoHook = () => {
   const [dark, setDark] = useState(true);
 
   // const doubledNumber = pureFunction(number);
-  // const doubledNumber = pureFunction(number);
-  
-  const doubledNumber = useMemo(() => {
 
+  const doubledNumber = useMemo(() => {
     return pureFunction(number);
   }, [number]);
 
@@ -50,10 +48,11 @@ export default UseMemoHook;
 // without use memo this function call everytime while this component re render.
 function pureFunction(num) {
 
-  console.time("slow");
+  console.time("time-taken");
   console.log("Inside pure function ");
   for (var i = 0; i < 500000000; i++) {}
-  console.timeEnd("slow");
+  // 100000
+  console.timeEnd("time-taken");
   return num * 2;
 }
 

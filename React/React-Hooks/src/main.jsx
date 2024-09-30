@@ -14,8 +14,11 @@ import FetchComponent from "./Hooks/customHooks/useFetch.jsx";
 import { GetInputValue } from "./Hooks/useRef/userRefGetInputValue.jsx";
 import { StrictMode } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { RefreshFrequently } from "./Hooks/customHooks/new-examples/useRefreshing.jsx";
+import OnlineStatusComponent from "./Hooks/customHooks/new-examples/checkOnline.jsx";
+import { MousePositionComponent } from "./Hooks/customHooks/new-examples/showMousePosition.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
@@ -26,9 +29,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/use-ref" element={<UseRefHook />} />
         <Route path="/use-memo" element={<UseMemoHook />} />
         <Route path="/use-memo2" element={<UseMemoExample2 />} />
+
+        {/* custom hooks  */}
         <Route path="/custom-hook" element={<MyCustomHook />} />
         <Route path="/custom-hook2" element={<FetchComponent />} />
+        <Route path="/use-refresh" element={<RefreshFrequently />} />
+        <Route path="/use-online-status" element={<OnlineStatusComponent />} />
+        <Route path="/use-mouse-position" element={<MousePositionComponent />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>
+  // </StrictMode>
 );

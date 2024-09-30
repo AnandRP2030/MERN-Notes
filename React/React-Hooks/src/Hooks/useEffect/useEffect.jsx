@@ -116,14 +116,20 @@ export default UseEffectHook;
 
 function OldComponent() {
   // using useEffect for handling unmount state.
+  const [count, setCount] = useState(0)
   useEffect(() => {
+    console.log('inside useEffect', count)
     return () => {
       console.log("Old component unmounted.");
     };
-  }, []);
+  }, [count]);
+  // every time count state change, cleanup execute, then mount again
   return (
     <div>
       <h1> Old Compoennt </h1>
+      <h1 onClick={() => {
+        setCount(count + 1)
+      }}>Count {count}</h1>
     </div>
   );
 }

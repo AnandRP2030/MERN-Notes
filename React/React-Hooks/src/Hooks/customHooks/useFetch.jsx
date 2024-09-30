@@ -7,23 +7,7 @@ function useFetch(url) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        console.log("resp ", response);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-      }
-    };
+
 
     fetchData();
 
@@ -32,15 +16,34 @@ function useFetch(url) {
     };
   }, [url]);
 
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url);
+      console.log("resp ", response);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const result = await response.json();
+      setData(result);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }
+  };
+
   return { data, loading, error };
 }
 
 function FetchComponent() {
-  const { data, loading, error } = useFetch(
+  const { data, loading: isLoading, error } = useFetch(
     "https://jsonplaceholder.typicode.com/todos/1"
   );
 
-  if (loading) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (

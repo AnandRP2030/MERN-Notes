@@ -13,7 +13,7 @@ function add(a, b) {
 return a + b
 }
 
-add(5, 2) // 7
+add (5, 2) // 7
 add (7, 2); // 9
 // no matter how many times i call this add function with these inputs, it always return the same result.
 
@@ -28,7 +28,7 @@ add (7, 2); // 9
    components re-render
 5. This means that if the inputs to the function have not changed since the last render, React will return the cached result instead of recomputing the function.
 
-6. You typically use useMemo when you have a function that takes some inputs and produces an output, but you don't want to recalculate that output on every render unless t he inputs have changed.
+6. You typically use useMemo when you have a function that takes some inputs and produces an output, but you don't want to recalculate that output on every render unless the inputs have changed.
 
 7. This is common when dealing with calculations, data processing, or any operation that consumes significant resources.
 
